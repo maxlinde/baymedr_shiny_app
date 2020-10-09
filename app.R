@@ -1,9 +1,10 @@
 # load packages
 library("shiny")
+library("shinythemes")
 
 # user interface
 ui <- fluidPage(
-    
+   theme = shinytheme(theme = "cosmo") 
 )
 
 # server
