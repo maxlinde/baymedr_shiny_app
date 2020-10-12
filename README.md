@@ -10,3 +10,17 @@ Bayes factors for superiority, non-inferiority, and equivalence designs.
 For that, either raw data or summary statistics can be used.
 
 NOTE: Work in progress\!
+
+## References
+
+<div id="refs" class="references">
+
+<div id="ref-LindeVanravenzwaaij2019_0.1.0">
+
+Linde, M., & van Ravenzwaaij, D. (2019). *baymedr: Computation of Bayes
+factors for common biomedical designs*.
+<https://CRAN.R-project.org/package=baymedr>
+
+</div>
+
+</div>
