@@ -1,6 +1,7 @@
 # load packages
 library("shiny")
 library("shinythemes")
+library("reactlog")
 
 # user interface
 ui <- fluidPage(
