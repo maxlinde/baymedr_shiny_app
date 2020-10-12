@@ -10,7 +10,8 @@ ui <- fluidPage(
     navbarPage(
         title = paste0("baymedr | v", packageVersion(pkg = "baymedr")),
         tabPanel(
-            title = "Welcome"
+            title = "Welcome",
+            uiOutput("welcome")
         ),
         navbarMenu(
             title = "Superiority",
@@ -44,7 +45,13 @@ ui <- fluidPage(
 
 # server
 server <- function(input, output, session) {
-    
+    output$welcome <- renderUI(
+        expr = {
+            includeMarkdown(
+                path = "welcome.md"
+            )
+        }
+    )
 }
 
 # app
