@@ -17,28 +17,34 @@ ui <- fluidPage(
         navbarMenu(
             title = "Superiority",
             tabPanel(
-                title = "Raw data"
+                title = "Raw data",
+                superRawUi("superRaw")
             ),
             tabPanel(
-                title = "Summary data"
+                title = "Summary data",
+                superSummaryUi("superSummary")
             )
         ),
         navbarMenu(
             title = "Non-inferiority",
             tabPanel(
-                title = "Raw data"
+                title = "Raw data",
+                inferRawUi("inferRaw")
             ),
             tabPanel(
-                title = "Summary data"
+                title = "Summary data",
+                inferSummaryUi("inferSummary")
             )
         ),
         navbarMenu(
             title = "Equivalence",
             tabPanel(
-                title = "Raw data"
+                title = "Raw data",
+                equivRawUi("equivRaw")
             ),
             tabPanel(
-                title = "Summary data"
+                title = "Summary data",
+                equivSummaryUi("equivSummary")
             )
         )
     )
@@ -52,6 +58,24 @@ server <- function(input, output, session) {
                 path = "welcome.md"
             )
         }
+    )
+    superRawServer(
+        id = "superRaw"
+    )
+    superSummaryServer(
+        id = "superSummary"
+    )
+    inferRawServer(
+        id = "inferRaw"
+    )
+    inferSummaryServer(
+        id = "inferSummary"
+    )
+    equivRawServer(
+        id = "equivRaw"
+    )
+    equivSummaryServer(
+        id = "equivSummary"
     )
 }
 
