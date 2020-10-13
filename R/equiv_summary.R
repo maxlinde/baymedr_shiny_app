@@ -1,11 +1,14 @@
+# module user interface
 equivSummaryUi <- function(id) {
     
 }
 
+# module server
 equivSummaryServer <- function(id) {
     
 }
 
+# module app
 equivSummaryApp <- function() {
     ui <- fluidPage(
         equivSummaryUi(

@@ -1,11 +1,14 @@
+# module user interface
 inferSummaryUi <- function(id) {
     
 }
 
+# module server
 inferSummaryServer <- function(id) {
     
 }
 
+# module app
 inferSummaryApp <- function() {
     ui <- fluidPage(
         inferSummaryUi(
