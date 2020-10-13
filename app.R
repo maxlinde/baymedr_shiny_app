@@ -52,6 +52,7 @@ ui <- fluidPage(
 
 # server
 server <- function(input, output, session) {
+    # welcome page
     output$welcome <- renderUI(
         expr = {
             includeMarkdown(
@@ -59,21 +60,27 @@ server <- function(input, output, session) {
             )
         }
     )
+    # module for superiority with raw data
     superRawServer(
         id = "superRaw"
     )
+    # module for superiority with summary data
     superSummaryServer(
         id = "superSummary"
     )
+    # module for non-inferiority with raw data
     inferRawServer(
         id = "inferRaw"
     )
+    # module for non-inferiority with summary data
     inferSummaryServer(
         id = "inferSummary"
     )
+    # module for equivalence with raw data
     equivRawServer(
         id = "equivRaw"
     )
+    # module for equivalence with summary data
     equivSummaryServer(
         id = "equivSummary"
     )
