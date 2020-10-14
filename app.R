@@ -2,6 +2,9 @@
 library("shiny")
 library("shinythemes")
 library("reactlog")
+library("vroom")
+library("tidyverse")
+library("kableExtra")
 
 # user interface
 ui <- fluidPage(
