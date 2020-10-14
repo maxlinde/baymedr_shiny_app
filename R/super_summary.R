@@ -12,12 +12,12 @@ superSummaryServer <- function(id) {
 superSummaryApp <- function() {
     ui <- fluidPage(
         superSummaryUi(
-            id = "superSummaryUi"
+            id = "superSummary"
         )
     )
     server <- function(input, output, session) {
         superSummaryServer(
-            id = "superSummaryServer"
+            id = "superSummary"
         )
     }
     shinyApp(ui, server)

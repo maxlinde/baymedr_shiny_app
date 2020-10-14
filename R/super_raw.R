@@ -12,12 +12,12 @@ superRawServer <- function(id) {
 superRawApp <- function() {
     ui <- fluidPage(
         superRawUi(
-            id = "superRawUi"
+            id = "superRaw"
         )
     )
     server <- function(input, output, session) {
         superRawServer(
-            id = "superRawServer"
+            id = "superRaw"
         )
     }
     shinyApp(ui, server)

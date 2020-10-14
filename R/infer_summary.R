@@ -12,12 +12,12 @@ inferSummaryServer <- function(id) {
 inferSummaryApp <- function() {
     ui <- fluidPage(
         inferSummaryUi(
-            id = "inferSummaryUi"
+            id = "inferSummary"
         )
     )
     server <- function(input, output, session) {
         inferSummaryServer(
-            id = "inferSummaryServer"
+            id = "inferSummary"
         )
     }
     shinyApp(ui, server)
