@@ -1,11 +1,22 @@
 # module user interface
 equivRawUi <- function(id) {
-    
+    ns <- NS(
+        namespace = id
+    )
+    list(
+        fluidRow(
+            dataUploadUi(
+                id = "dataUpload"
+            )
+        )
+    )
 }
 
 # module server
 equivRawServer <- function(id) {
-    
+    dataUploadServer(
+        id = "dataUpload"
+    )
 }
 
 # module app
