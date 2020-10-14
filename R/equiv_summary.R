@@ -16,7 +16,7 @@ equivSummaryApp <- function() {
         )
     )
     server <- function(input, output, session) {
-        equivRawServer(
+        equivSummaryServer(
             id = "equivSummaryServer"
         )
     }
