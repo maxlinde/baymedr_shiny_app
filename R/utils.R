@@ -99,13 +99,13 @@ equiv_ui <- function(id) {
         # interval_low
         interval_low = numericInput(
             inputId = id,
-            label = "Lower boundary of the equivalece interval",
+            label = "Lower boundary of the equivalence interval",
             value = NULL
         ),
         # interval_high
         interval_high = numericInput(
             inputId = id,
-            label = "Upper boundary of the equivalece interval",
+            label = "Upper boundary of the equivalence interval",
             value = NULL
         ),
         # interval_std
