@@ -13,6 +13,10 @@ general_ui <- function(id) {
             label = "Scale parameter of the Cauchy prior",
             value = "1 / sqrt(2)",
             placeholder = "e.g., '1' or '1 / sqrt(2)'"
+        ),
+        submit = actionButton(
+            inputId = id,
+            label = "Calculate Bayes factor"
         )
     )
 }

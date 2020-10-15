@@ -23,6 +23,9 @@ equivRawUi <- function(id) {
                 width = 4,
                 equiv_ui(ns("interval_std"))
             )
+        ),
+        fluidRow(
+            general_ui(ns("submit"))
         )
     )
 }
