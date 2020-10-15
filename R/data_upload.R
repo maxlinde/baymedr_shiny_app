@@ -67,6 +67,21 @@ dataUploadServer <- function(id) {
                     kable_styling(bootstrap_options = c("striped", "hover")) %>%
                     scroll_box(width = "100%", height = "550px")
             }
+            return(
+                list(
+                    data = data,
+                    control = reactive(
+                        x = {
+                            input$name_control
+                        }
+                    ),
+                    experimental = reactive(
+                        x = {
+                            input$name_experimental
+                        }
+                    )
+                )
+            )
         }
     )
 }
