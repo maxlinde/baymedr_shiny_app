@@ -12,7 +12,16 @@ equivRawUi <- function(id) {
         fluidRow(
             column(
                 width = 4,
-                prior_scale(ns("prior_scale"))
+                general_ui(ns("prior_scale"))
+            ),
+            column(
+                width = 4,
+                equiv_ui(ns("interval_low")),
+                equiv_ui(ns("interval_high"))
+            ),
+            column(
+                width = 4,
+                equiv_ui(ns("interval_std"))
             )
         )
     )
