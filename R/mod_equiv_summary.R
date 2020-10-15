@@ -1,6 +1,13 @@
 # module user interface
 equivSummaryUi <- function(id) {
-    
+    ns <- NS(
+        namespace = id
+    )
+    list(
+        fluidRow(
+            descriptives(id)
+        )
+    )
 }
 
 # module server
