@@ -8,6 +8,12 @@ equivRawUi <- function(id) {
             dataUploadUi(
                 id = "dataUpload"
             )
+        ),
+        fluidRow(
+            column(
+                width = 4,
+                prior_scale(ns("prior_scale"))
+            )
         )
     )
 }
