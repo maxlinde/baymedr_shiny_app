@@ -5,7 +5,12 @@ superSummaryUi <- function(id) {
 
 # module server
 superSummaryServer <- function(id) {
-    
+    moduleServer(
+        id = id,
+        module = function(input, output, session) {
+            
+        }
+    )
 }
 
 # module app

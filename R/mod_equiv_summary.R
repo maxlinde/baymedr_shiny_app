@@ -30,7 +30,12 @@ equivSummaryUi <- function(id) {
 
 # module server
 equivSummaryServer <- function(id) {
-    
+    moduleServer(
+        id = id,
+        module = function(input, output, session) {
+            
+        }
+    )
 }
 
 # module app

@@ -5,7 +5,12 @@ superRawUi <- function(id) {
 
 # module server
 superRawServer <- function(id) {
-    
+    moduleServer(
+        id = id,
+        module = function(input, output, session) {
+            
+        }
+    )
 }
 
 # module app

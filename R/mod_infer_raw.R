@@ -5,7 +5,12 @@ inferRawUi <- function(id) {
 
 # module server
 inferRawServer <- function(id) {
-    
+    moduleServer(
+        id = id,
+        module = function(input, output, session) {
+            
+        }
+    )
 }
 
 # module app

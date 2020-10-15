@@ -5,7 +5,12 @@ inferSummaryUi <- function(id) {
 
 # module server
 inferSummaryServer <- function(id) {
-    
+    moduleServer(
+        id = id,
+        module = function(input, output, session) {
+            
+        }
+    )
 }
 
 # module app

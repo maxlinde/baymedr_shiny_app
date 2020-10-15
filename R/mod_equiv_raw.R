@@ -6,7 +6,7 @@ equivRawUi <- function(id) {
     list(
         fluidRow(
             dataUploadUi(
-                id = "dataUpload"
+                id = ns("dataUpload")
             )
         ),
         fluidRow(
@@ -32,8 +32,13 @@ equivRawUi <- function(id) {
 
 # module server
 equivRawServer <- function(id) {
-    dataUploadServer(
-        id = "dataUpload"
+    moduleServer(
+        id = id,
+        module = function(input, output, session) {
+            dat <- dataUploadServer(
+                id = "dataUpload"
+            )
+        }
     )
 }
 
