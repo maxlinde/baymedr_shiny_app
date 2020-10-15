@@ -6,6 +6,24 @@ equivSummaryUi <- function(id) {
     list(
         fluidRow(
             descriptives(id)
+        ),
+        fluidRow(
+            column(
+                width = 4,
+                general_ui(ns("prior_scale"))
+            ),
+            column(
+                width = 4,
+                equiv_ui(ns("interval_low")),
+                equiv_ui(ns("interval_high"))
+            ),
+            column(
+                width = 4,
+                equiv_ui(ns("interval_std"))
+            )
+        ),
+        fluidRow(
+            general_ui(ns("submit"))
         )
     )
 }
