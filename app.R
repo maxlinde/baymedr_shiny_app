@@ -5,6 +5,8 @@ library("reactlog")
 library("vroom")
 library("tidyverse")
 library("kableExtra")
+library("RColorBrewer")
+library("ggpattern")
 
 # user interface
 ui <- fluidPage(
