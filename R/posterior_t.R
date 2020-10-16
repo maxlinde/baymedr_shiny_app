@@ -1,18 +1,18 @@
 posterior_t <- function(delta,
                         t,
-                        n1,
-                        n2,
+                        n_x,
+                        n_y,
                         ind_samples,
                         prior_loc,
                         prior_scale,
                         prior_df,
                         rel_tol = .Machine$double.eps^0.25) {
     neff <- ifelse(test = ind_samples,
-                   yes = n1 * n2 / (n1 + n2),
-                   no = n1)
+                   yes = n_x * n_y / (n_x + n_y),
+                   no = n_x)
     nu <- ifelse(test = ind_samples,
-                 yes = n1 + n2 - 2,
-                 no = n1 - 1)
+                 yes = n_x + n_y - 2,
+                 no = n_x - 1)
     mu_delta <- prior_loc
     gamma <- prior_scale
     kappa <- prior_df
