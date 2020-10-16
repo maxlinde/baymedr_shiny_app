@@ -132,6 +132,9 @@ results_ui <- function(id) {
         name,
         results_show = verbatimTextOutput(
             outputId = id
+        ),
+        results_plot = plotOutput(
+            outputId = id
         )
     )
 }
