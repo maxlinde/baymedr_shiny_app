@@ -26,6 +26,12 @@ equivRawUi <- function(id) {
         ),
         fluidRow(
             general_ui(ns("submit"))
+        ),
+        fluidRow(
+            column(
+                width = 6,
+                results_ui(ns("results_show"))
+            )
         )
     )
 }
@@ -52,6 +58,22 @@ equivRawServer <- function(id) {
                         interval_std = input$interval_std,
                         prior_scale = input$prior_scale
                     )
+                }
+            )
+            show <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_show(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_show <- renderPrint(
+                expr = {
+                    show()
                 }
             )
         }
