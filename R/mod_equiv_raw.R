@@ -31,6 +31,10 @@ equivRawUi <- function(id) {
             column(
                 width = 6,
                 results_ui(ns("results_show"))
+            ),
+            column(
+                width = 6,
+                results_ui(ns("results_plot"))
             )
         )
     )
@@ -74,6 +78,22 @@ equivRawServer <- function(id) {
             output$results_show <- renderPrint(
                 expr = {
                     show()
+                }
+            )
+            plot <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_plot(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_plot <- renderPlot(
+                expr = {
+                    plot()
                 }
             )
         }
