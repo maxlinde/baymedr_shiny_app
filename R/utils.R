@@ -120,3 +120,18 @@ equiv_ui <- function(id) {
         )
     )
 }
+
+results_ui <- function(id) {
+    name = str_split(
+        string = id,
+        pattern = "-"
+    ) %>%
+        unlist() %>%
+        last()
+    switch(
+        name,
+        results_show = verbatimTextOutput(
+            outputId = id
+        )
+    )
+}
