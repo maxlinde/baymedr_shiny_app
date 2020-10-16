@@ -38,6 +38,22 @@ equivRawServer <- function(id) {
             dat <- dataUploadServer(
                 id = "dataUpload"
             )
+            results <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_calculate(
+                        id = id,
+                        x = dat$data()[[dat$control()]],
+                        y = dat$data()[[dat$experimental()]],
+                        interval_low = input$interval_low,
+                        interval_high = input$interval_high,
+                        interval_std = input$interval_std,
+                        prior_scale = input$prior_scale
+                    )
+                }
+            )
         }
     )
 }
