@@ -39,9 +39,9 @@ bf10_t <- function(t,
                                  prior_scale = prior_scale,
                                  prior_df = prior_df,
                                  rel_tol = rel_tol)
-    bf_min_x <- post_area_smaller_0 / prior_area_smaller_0
+    bf_min1 <- post_area_smaller_0 / prior_area_smaller_0
     bf_plus1 <- (1 - post_area_smaller_0) / (1 - prior_area_smaller_0)
-    bf_min0 <- bf_min_x * bf10
+    bf_min0 <- bf_min1 * bf10
     bf_plus0 <- bf_plus1 * bf10
     return(list(bf_10 = bf10,
                 bf_plus0 = bf_plus0,
