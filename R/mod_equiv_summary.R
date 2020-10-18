@@ -24,6 +24,16 @@ equivSummaryUi <- function(id) {
         ),
         fluidRow(
             general_ui(ns("submit"))
+        ),
+        fluidRow(
+            column(
+                width = 6,
+                results_ui(ns("results_show"))
+            ),
+            column(
+                width = 6,
+                results_ui(ns("results_plot"))
+            )
         )
     )
 }
@@ -33,7 +43,60 @@ equivSummaryServer <- function(id) {
     moduleServer(
         id = id,
         module = function(input, output, session) {
-            
+            results <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_calculate(
+                        id = id,
+                        n_x = input$n_x,
+                        n_y = input$n_y,
+                        mean_x = input$mean_x,
+                        mean_y = input$mean_y,
+                        sd_x = input$sd_x,
+                        sd_y = input$sd_y,
+                        ci_margin = input$ci_margin,
+                        ci_level = input$ci_level,
+                        interval_low = input$interval_low,
+                        interval_high = input$interval_high,
+                        interval_std = input$interval_std,
+                        prior_scale = input$prior_scale
+                    )
+                }
+            )
+            show <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_show(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_show <- renderPrint(
+                expr = {
+                    show()
+                }
+            )
+            plot <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_plot(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_plot <- renderPlot(
+                expr = {
+                    plot()
+                }
+            )
         }
     )
 }
