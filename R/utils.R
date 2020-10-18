@@ -121,6 +121,76 @@ equiv_ui <- function(id) {
     )
 }
 
+infer_ui <- function(id) {
+    name <- str_split(
+        string = id,
+        pattern = "-"
+    ) %>%
+        unlist() %>%
+        last()
+    switch(
+        name,
+        # ni_margin
+        ni_margin = numericInput(
+            inputId = id,
+            label = "Non-inferiority margin",
+            value = NULL
+        ),
+        # ni_margin_std
+        ni_margin_std = radioButtons(
+            inputId = id,
+            label = "Unit for the non-inferiority margin",
+            choices = setNames(
+                object = c("TRUE", "FALSE"),
+                nm = c("Standardised", "Unstandardised")
+            ),
+            selected = "TRUE"
+        ),
+        # direction
+        direction = radioButtons(
+            inputId = id,
+            label = "Do high or low values represent 'non-inferiority'?",
+            choices = setNames(
+                object = c("low", "high"),
+                nm = c("Low", "High")
+            ),
+            selected = "high"
+        )
+    )
+}
+
+super_ui <- function(id) {
+    name <- str_split(
+        string = id,
+        pattern = "-"
+    ) %>%
+        unlist() %>%
+        last()
+    switch(
+        name,
+        # direction
+        direction = radioButtons(
+            inputId = id,
+            label = "Do high or low values represent 'superiority'?",
+            choices = setNames(
+                object = c("low", "high"),
+                nm = c("Low", "High")
+            ),
+            selected = "high"
+        ),
+        # alternative
+        alternative = radioButtons(
+            inputId = id,
+            label = "Do you want a one-sided or two-sided test?",
+            choices = setNames(
+                object = c("one.sided", "two.sided"),
+                nm = c("One-sided", "Two-sided")
+            ),
+            selected = "one.sided"
+        )
+    )
+}
+
 results_ui <- function(id) {
     name = str_split(
         string = id,
