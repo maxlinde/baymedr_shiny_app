@@ -30,7 +30,8 @@ inferRawUi <- function(id) {
         fluidRow(
             column(
                 width = 6,
-                results_ui(ns("results_show"))
+                results_ui(ns("results_show")),
+                results_ui(ns("results_form"))
             ),
             column(
                 width = 6,
@@ -78,6 +79,22 @@ inferRawServer <- function(id) {
             output$results_show <- renderPrint(
                 expr = {
                     show()
+                }
+            )
+            form <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_form(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_form <- renderUI(
+                expr = {
+                    form()
                 }
             )
             plot <- eventReactive(
