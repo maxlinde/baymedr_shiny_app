@@ -205,6 +205,9 @@ results_ui <- function(id) {
         ),
         results_plot = plotOutput(
             outputId = id
+        ),
+        results_form = uiOutput(
+            outputId = id
         )
     )
 }
