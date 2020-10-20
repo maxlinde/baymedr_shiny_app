@@ -6,7 +6,6 @@ infer_show <- function(n_x = n_x,
                        ni_margin = ni_margin,
                        prior_scale = prior_scale,
                        bf = bf,
-                       bf_all = bf_all,
                        direction = direction) {
     cat(
         strrep(
@@ -27,19 +26,21 @@ infer_show <- function(n_x = n_x,
         "H1 (non-inferiority):         ",
         hypotheses$h1,
         "\n",
-        paste0(
-            "Non-inferiority margin:       ",
-            formatC(x = ni_margin$ni_mar_std,
-                    digits = 2,
-                    format = "f"),
-            " (standardised)",
-            "\n",
-            "                              ",
-            formatC(x = ni_margin$ni_mar_unstd,
-                    digits = 2,
-                    format = "f"),
-            " (unstandardised)",
+        "Non-inferiority margin:       ",
+        formatC(
+            x = ni_margin$ni_margin_std,
+            digits = 2,
+            format = "f"
         ),
+        " (standardised)",
+        "\n",
+        "                              ",
+        formatC(
+            x = ni_margin$ni_margin_unstd,
+            digits = 2,
+            format = "f"
+        ),
+        " (unstandardised)",
         "\n",
         "Cauchy prior scale:           ",
         formatC(
