@@ -9,6 +9,16 @@ inferRawUi <- function(id) {
                 id = ns("dataUpload")
             )
         ),
+        tags$head(
+            tags$style(
+                HTML("
+                    hr {
+                        border: 1px solid #000000;
+                    }
+                ")
+            )
+        ),
+        tags$hr(),
         fluidRow(
             column(
                 width = 4,
@@ -24,9 +34,11 @@ inferRawUi <- function(id) {
                 infer_ui(ns("direction"))
             )
         ),
+        tags$hr(),
         fluidRow(
             general_ui(ns("submit"))
         ),
+        tags$hr(),
         fluidRow(
             column(
                 width = 6,
