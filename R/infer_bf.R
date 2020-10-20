@@ -47,7 +47,7 @@ infer_bf <- function(x = NULL,
                       prior_loc = ni_margin_std,
                       prior_scale = prior_scale,
                       prior_df = 1)
-        bf <- res[[3]] / res[[2]]
+        bf <- res$bf_min0 / res$bf_plus0
         h0 <- "mu_y - mu_x > ni_margin"
         h1 <- "mu_y - mu_x < ni_margin"
     } else {
@@ -66,7 +66,7 @@ infer_bf <- function(x = NULL,
                       prior_loc = ni_margin_std,
                       prior_scale = prior_scale,
                       prior_df = 1)
-        bf <- res[[2]] / res[[3]]
+        bf <- res$bf_plus0 / res$bf_min0
         h0 <- "mu_y - mu_x < -ni_margin"
         h1 <- "mu_y - mu_x > -ni_margin"
     }
@@ -75,7 +75,6 @@ infer_bf <- function(x = NULL,
                        h1 = h1)
     ni_margin <- list(ni_margin_std = ni_margin_std,
                       ni_margin_unstd = ni_margin_unstd)
-    bf_all <- res
     list(n_x = n_x,
          n_y = n_y,
          t = t_stat,
@@ -84,6 +83,5 @@ infer_bf <- function(x = NULL,
          ni_margin = ni_margin,
          prior_scale = prior_scale,
          bf = bf,
-         bf_all = bf_all,
          direction = direction)
 }

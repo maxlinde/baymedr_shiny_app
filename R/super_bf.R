@@ -41,21 +41,20 @@ super_bf <- function(x = NULL,
                    "one.sided")) {
         if (str_detect(direction,
                        "low")) {
-            bf <- res[[3]]
+            bf <- res$bf_min0
             h1 <- "mu_y < mu_x"
         } else {
-            bf <- res[[2]]
+            bf <- res$bf_plus0
             h1 <- "mu_y > mu_x"
         }
     } else {
-        bf <- res[[1]]
+        bf <- res$bf_10
         h1 <- "mu_y != mu_x"
     }
     test <- "Superiority analysis"
     h0 <- "mu_y == mu_x"
     hypotheses <- list(h0 = h0,
                        h1 = h1)
-    bf_all <- res
     list(n_x = n_x,
          n_y = n_y,
          t = t_stat,
@@ -63,7 +62,6 @@ super_bf <- function(x = NULL,
          hypotheses = hypotheses,
          prior_scale = prior_scale,
          bf = bf,
-         bf_all = bf_all,
          direction = direction,
          alternative = alternative)
 }
