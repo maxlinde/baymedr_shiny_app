@@ -7,6 +7,8 @@ library("tidyverse")
 library("kableExtra")
 library("RColorBrewer")
 library("ggpattern")
+library("truncdist")
+library("cowplot")
 
 # user interface
 ui <- fluidPage(
