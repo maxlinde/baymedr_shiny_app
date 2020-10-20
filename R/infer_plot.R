@@ -187,7 +187,7 @@ infer_plot <- function(n_x = n_x,
             mapping = aes(
                 x = x,
                 y = y,
-                colour = colours[c(2, 4)]
+                colour = colours[c(1, 3)]
             ),
             size = 5,
             show.legend = FALSE
@@ -369,7 +369,7 @@ infer_plot <- function(n_x = n_x,
             mapping = aes(
                 x = x,
                 y = y,
-                colour = colours[c(2, 4)]
+                colour = colours[c(1, 3)]
             ),
             size = 5,
             show.legend = FALSE
