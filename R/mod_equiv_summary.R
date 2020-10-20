@@ -95,7 +95,8 @@ equivSummaryServer <- function(id) {
             output$results_plot <- renderPlot(
                 expr = {
                     plot()
-                }
+                },
+                height = 350
             )
         }
     )
