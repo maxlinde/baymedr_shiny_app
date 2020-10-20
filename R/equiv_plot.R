@@ -139,6 +139,7 @@ equiv_plot <- function(n_x = n_x,
                 labels = c("posterior" = "Posterior",
                            "prior" = "Prior")
             ) +
+            scale_colour_identity() +
             theme_bw() +
             theme(
                 text = element_text(
@@ -368,6 +369,7 @@ equiv_plot <- function(n_x = n_x,
                 labels = c("posterior" = "Posterior",
                            "prior" = "Prior")
             ) +
+            scale_colour_identity() +
             theme_bw() +
             theme(
                 text = element_text(
