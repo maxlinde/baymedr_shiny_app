@@ -1,7 +1,12 @@
-super_show <- function(test = test,
+super_show <- function(n_x = n_x,
+                       n_y = n_y,
+                       t = t_stat,
+                       test = test,
                        hypotheses = hypotheses,
                        prior_scale = prior_scale,
-                       bf = bf) {
+                       bf = bf,
+                       direction = direction,
+                       alternative = alternative) {
     cat(
         strrep(
             x = "*",
