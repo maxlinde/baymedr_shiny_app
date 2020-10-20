@@ -65,7 +65,7 @@ dataUploadServer <- function(id) {
             output$data_table <- function() {
                 kable(x = data()) %>%
                     kable_styling(bootstrap_options = c("striped", "hover")) %>%
-                    scroll_box(width = "100%", height = "550px")
+                    scroll_box(width = "100%", height = "400px")
             }
             return(
                 list(
