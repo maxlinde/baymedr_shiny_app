@@ -9,6 +9,8 @@ library("RColorBrewer")
 library("ggpattern")
 library("truncdist")
 library("cowplot")
+library("rlang")
+library("scales")
 
 # user interface
 ui <- fluidPage(
