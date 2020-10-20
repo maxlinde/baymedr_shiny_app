@@ -80,6 +80,7 @@ equiv_show <- function(n_x = n_x,
             x = "*",
             times = 30
         ),
-        "\n"
+        "\n",
+        sep = ""
     )
 }
