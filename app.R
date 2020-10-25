@@ -64,8 +64,10 @@ server <- function(input, output, session) {
     # welcome page
     output$welcome <- renderUI(
         expr = {
-            includeMarkdown(
-                path = "welcome.md"
+            includeHTML(
+                path = render(
+                    input = "welcome.Rmd"
+                )
             )
         }
     )
