@@ -1,0 +1,1 @@
+Only non-negative values are accepted. When the input for 'Do high or low values represent 'non-inferiority'?' is 'Low', the non-inferiority margin is automatically converted to its negative counterpart.
