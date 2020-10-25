@@ -23,7 +23,15 @@ super_show <- function(n_x = n_x,
         "H0 (non-superiority):         ",
         hypotheses$h0,
         "\n",
-        "H1 (superiority):             ",
+        if (alternative == "one.sided") {
+            if (direction == "low") {
+                "H- (superiority):             "
+            } else {
+                "H+ (superiority):             "
+            }
+        } else {
+                "H1 (superiority):             "
+        },
         hypotheses$h1,
         "\n",
         "Cauchy prior scale:           ",
@@ -34,7 +42,15 @@ super_show <- function(n_x = n_x,
         ),
         "\n",
         "\n",
-        "    BF10 (superiority) = ",
+        if (alternative == "one.sided") {
+            if (direction == "low") {
+                "    BF-0 (superiority) = "
+            } else {
+                "    BF+0 (superiority) = "
+            }
+        } else {
+            "    BF10 (superiority) = "
+        },
         if (bf > 1 / 1000 & bf < 1000) {
             formatC(
                 x = bf,

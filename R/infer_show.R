@@ -20,10 +20,18 @@ infer_show <- function(n_x = n_x,
             times = nchar(test)
         ),
         "\n",
-        "H0 (inferiority):             ",
+        if (direction == "low") {
+            "H+ (inferiority):             "
+        } else {
+            "H- (inferiority):             "
+        },
         hypotheses$h0,
         "\n",
-        "H1 (non-inferiority):         ",
+        if (direction == "low") {
+            "H- (non-inferiority):         "
+        } else {
+            "H+ (non-inferiority):         "
+        },
         hypotheses$h1,
         "\n",
         "Non-inferiority margin:       ",
@@ -50,7 +58,11 @@ infer_show <- function(n_x = n_x,
         ),
         "\n",
         "\n",
-        "    BF10 (non-inferiority) = ",
+        if (direction == "low") {
+            "    BF-+ (non-inferiority) = "
+        } else {
+            "    BF+- (non-inferiority) = "
+        },
         if (bf > 1 / 1000 & bf < 1000) {
             formatC(
                 x = bf,

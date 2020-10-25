@@ -7,9 +7,25 @@ super_form <- function(n_x = n_x,
                        bf = bf,
                        direction = direction,
                        alternative = alternative) {
-    withMathJax(
-        helpText(
-            "$$\\huge\\text{BF}_{10}=\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_1\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_1\\right)}}$$"
+    if (alternative == "one.sided") {
+        if (direction == "low") {
+            withMathJax(
+                helpText(
+                    "$$\\huge\\text{BF}_{-0}=\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}$$"
+                )
+            )
+        } else {
+            withMathJax(
+                helpText(
+                    "$$\\huge\\text{BF}_{+0}=\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}$$"
+                )
+            )
+        }
+    } else {
+        withMathJax(
+            helpText(
+                "$$\\huge\\text{BF}_{10}=\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_1\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_1\\right)}}$$"
+            )
         )
-    )
+    }
 }

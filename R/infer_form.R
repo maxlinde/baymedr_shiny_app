@@ -10,13 +10,13 @@ infer_form <- function(n_x = n_x,
     if (direction == "low") {
         withMathJax(
             helpText(
-                "$$\\huge\\text{BF}_{10}=\\dfrac{\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_1\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_1\\right)}}}{\\dfrac{\\color{#377EB8}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_1\\right)}}{\\color{#984EA3}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_1\\right)}}}$$"
+                "$$\\huge\\text{BF}_{-+}=\\dfrac{\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}}{\\dfrac{\\color{#377EB8}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{#984EA3}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}}$$"
             )
         )
     } else {
         withMathJax(
             helpText(
-                "$$\\huge\\text{BF}_{10}=\\dfrac{\\dfrac{\\color{#377EB8}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_1\\right)}}{\\color{#984EA3}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_1\\right)}}}{\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_1\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_1\\right)}}}$$"
+                "$$\\huge\\text{BF}_{+-}=\\dfrac{\\dfrac{\\color{#377EB8}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{#984EA3}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}}{\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}}$$"
             )
         )
     }
