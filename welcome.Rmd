@@ -49,35 +49,32 @@ The equivalence test gathers evidence of whether the experimental and control gr
   text-align: center;
   border-left: 1px solid black;
 }
-img{
-  border-radius: 50%
-}
 </style>
 
 <div class="column-left">
-<img src="img/mlinde.jpeg" alt="Maximilian Linde" width="200">
+<img src="img/mlinde.jpeg" alt="Maximilian Linde" width="200" style="border-radius: 50%;">
 <p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p>
 <a href="https://github.com/maxlinde">
-<img border="0" alt="GitHub" src="img/github.png" width="30">
+<img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;">
 </a>
 <a href="https://twitter.com/maxlinde_">
-<img border="0" alt="Twitter" src="img/twitter.png" width="30">
+<img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
 </a>
 <a href="https://orcid.org/0000-0001-8421-090X">
-<img border="0" alt="Orcid" src="img/orcid.png" width="30">
+<img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
 </a>
 </div>
 <div class="column-right">
-<img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="200">
+<img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="200" style="border-radius: 50%;">
 <p>Don van Ravenzwaaij is associate professor at the University of Groningen</p>
 <a href="https://twitter.com/donvanraven">
-<img border="0" alt="Twitter" src="img/twitter.png" width="30">
+<img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
 </a>
 <a href="https://orcid.org/0000-0002-5030-4091">
-<img border="0" alt="Orcid" src="img/orcid.png" width="30">
+<img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
 </a>
 <a href="https://www.donvanravenzwaaij.com">
-<img border="0" alt="Personal" src="img/personal.png" width="30">
+<img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
 </a>
 </div>
 ```
