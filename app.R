@@ -11,6 +11,7 @@ library("truncdist")
 library("cowplot")
 library("rlang")
 library("scales")
+library("rmarkdown")
 
 # user interface
 ui <- fluidPage(
