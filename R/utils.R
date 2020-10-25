@@ -100,13 +100,25 @@ equiv_ui <- function(id) {
             inputId = id,
             label = "Lower boundary of the equivalence interval",
             value = NULL
-        ),
+        ) %>%
+            helper(
+                icon = "question",
+                colour = "red",
+                type = "markdown",
+                content = "interval"
+            ),
         # interval_high
         interval_high = numericInput(
             inputId = id,
             label = "Upper boundary of the equivalence interval",
             value = NULL
-        ),
+        ) %>%
+            helper(
+                icon = "question",
+                colour = "red",
+                type = "markdown",
+                content = "interval"
+            ),
         # interval_std
         interval_std = radioButtons(
             inputId = id,
@@ -134,7 +146,13 @@ infer_ui <- function(id) {
             inputId = id,
             label = "Non-inferiority margin",
             value = NULL
-        ),
+        ) %>%
+            helper(
+                icon = "question",
+                colour = "red",
+                type = "markdown",
+                content = "ni_margin"
+            ),
         # ni_margin_std
         ni_margin_std = radioButtons(
             inputId = id,

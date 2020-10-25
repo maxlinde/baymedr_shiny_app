@@ -9,7 +9,13 @@ dataUploadUi <- function(id) {
                 fileInput(
                     inputId = ns("upload"),
                     label = "Upload data file"
-                ),
+                ) %>%
+                    helper(
+                        icon = "question",
+                        colour = "red",
+                        type = "markdown",
+                        content = "upload"
+                    ),
                 selectInput(
                     inputId = ns("name_control"),
                     label = "Column name of the control condition",
