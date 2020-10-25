@@ -12,6 +12,7 @@ library("cowplot")
 library("rlang")
 library("scales")
 library("rmarkdown")
+library("shinyhelper")
 
 # user interface
 ui <- fluidPage(
@@ -62,6 +63,7 @@ ui <- fluidPage(
 
 # server
 server <- function(input, output, session) {
+    observe_helpers()
     # welcome page
     output$welcome <- renderUI(
         expr = {
