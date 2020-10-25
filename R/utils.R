@@ -1,4 +1,6 @@
+# general ui inputs
 general_ui <- function(id) {
+    # extract last part of id
     name <- str_split(
         string = id,
         pattern = "-"
@@ -85,8 +87,9 @@ general_ui <- function(id) {
         )
     )
 }
-
+# equivalence ui inputs
 equiv_ui <- function(id) {
+    # extract last part of id
     name <- str_split(
         string = id,
         pattern = "-"
@@ -132,7 +135,9 @@ equiv_ui <- function(id) {
     )
 }
 
+# non-inferiority ui inputs
 infer_ui <- function(id) {
+    # extract last part of id
     name <- str_split(
         string = id,
         pattern = "-"
@@ -176,7 +181,9 @@ infer_ui <- function(id) {
     )
 }
 
+# superiority ui inputs
 super_ui <- function(id) {
+    # extract last part of id
     name <- str_split(
         string = id,
         pattern = "-"
@@ -208,7 +215,9 @@ super_ui <- function(id) {
     )
 }
 
+# results ui outputs
 results_ui <- function(id) {
+    # extract last part of id
     name = str_split(
         string = id,
         pattern = "-"
@@ -217,12 +226,15 @@ results_ui <- function(id) {
         last()
     switch(
         name,
+        # results_show
         results_show = verbatimTextOutput(
             outputId = id
         ),
+        # results_plot
         results_plot = plotOutput(
             outputId = id
         ),
+        # results_form
         results_form = uiOutput(
             outputId = id
         )
