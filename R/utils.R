@@ -14,7 +14,13 @@ general_ui <- function(id) {
             inputId = id,
             label = "Scale parameter of the Cauchy prior",
             value = "1 / sqrt(2)"
-        ),
+        ) %>%
+            helper(
+                icon = "question",
+                colour = "red",
+                type = "markdown",
+                content = "prior_scale"
+            ),
         # submit
         submit = actionButton(
             inputId = id,
