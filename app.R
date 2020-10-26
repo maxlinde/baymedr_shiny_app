@@ -76,7 +76,9 @@ ui <- fluidPage(
 
 # server
 server <- function(input, output, session) {
-    observe_helpers()
+    observe_helpers(
+        withMathJax = TRUE
+    )
     # welcome page
     output$welcome <- renderUI(
         expr = {
