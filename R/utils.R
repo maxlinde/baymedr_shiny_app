@@ -16,8 +16,8 @@ general_ui <- function(id) {
             value = "1 / sqrt(2)"
         ) %>%
             helper(
-                icon = "question",
-                colour = "red",
+                icon = "question-circle",
+                colour = "green",
                 type = "markdown",
                 content = "prior_scale"
             ),
@@ -111,8 +111,8 @@ equiv_ui <- function(id) {
             value = NULL
         ) %>%
             helper(
-                icon = "question",
-                colour = "red",
+                icon = "question-circle",
+                colour = "green",
                 type = "markdown",
                 content = "interval"
             ),
@@ -123,8 +123,8 @@ equiv_ui <- function(id) {
             value = NULL
         ) %>%
             helper(
-                icon = "question",
-                colour = "red",
+                icon = "question-circle",
+                colour = "green",
                 type = "markdown",
                 content = "interval"
             ),
@@ -159,8 +159,8 @@ infer_ui <- function(id) {
             value = NULL
         ) %>%
             helper(
-                icon = "question",
-                colour = "red",
+                icon = "question-circle",
+                colour = "green",
                 type = "markdown",
                 content = "ni_margin"
             ),

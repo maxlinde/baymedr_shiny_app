@@ -11,8 +11,8 @@ dataUploadUi <- function(id) {
                     label = "Upload data file"
                 ) %>%
                     helper(
-                        icon = "question",
-                        colour = "red",
+                        icon = "question-circle",
+                        colour = "green",
                         type = "markdown",
                         content = "upload"
                     ),
