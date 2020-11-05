@@ -15,13 +15,13 @@ csl:
 
 # Bayes Factors for Superiority, Non-inferiority, and Equivalence Designs
 
-Welcome! This website allows you to easily calculate Bayes factors for superiority, non-inferiority, and equivalence designs. This website was built using Shiny [@ChangChengAllaire_2020_1.5.0] and implements the baymedr software [@LindeVanravenzwaaij2019_0.1.0], written in R [@Rcoreteam2019], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible to every researcher.
+Welcome! This website allows you to easily calculate Bayes factors for superiority, non-inferiority, and equivalence designs. This website was built using Shiny [@ChangChengAllaire_2020_1.5.0] and implements the baymedr software [@LindeVanravenzwaaij2019_0.1.0], written in R [@Rcoreteam2019], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible to every researcher. A tutorial manuscript on how to use the baymedr R package is provided elsewhere [see @LindeVanravenzwaaij2019preprint].
 
 # Bayes Factors
 
 Bayes factors express the relative plausibility of the obtained data under the null and alternative hypotheses (i.e., $\mathcal{H}_0$ and $\mathcal{H}_1$, respectively). One of the major advantages of Bayes factors is their ease of interpretation. For example, a Bayes factor of $\text{BF}_{10} = 10$ indicates that the data are $10$ times more likely to have occurred if $\mathcal{H}_1$ were true than if $\mathcal{H}_0$ were true. Alternatively, a Bayes factor of $\text{BF}_{10} = 0.1$ indicates that the data are $10$ ($1/0.1$) times more likely to have occurred if $\mathcal{H}_0$ were true compared to if $\mathcal{H}_1$ were true.
 
-This is not the right place to explain how Bayes factors are calculated. However, we provide a list of useful resources to learn about Bayesian statistics in general and Bayes factors specifically: @Kruschke2015, @EtzVandekerckhove2018, @GelmanCarlinStern_2013, @KassRaftery1995, @WagenmakersMarsmanJamil_2018, @RouderSpeckmanSun_2009, @KruschkeLiddell2018a, @KruschkeLiddell2018b, @OhaganForster2004, @RouderHaafVandekerckhove2018, @EtzGronauDablander_2018, @VanravenzwaaijMondenTendeiro_2019, @MoreyRouder2011, @Kruschke2018, @Kruschke2011, @LindeVanravenzwaaij2019preprint.
+This is not the right place for an in-depth treatment of Bayes factors. However, we provide a list of useful resources to learn about Bayesian statistics in general and Bayes factors specifically: @Kruschke2015, @EtzVandekerckhove2018, @GelmanCarlinStern_2013, @KassRaftery1995, @WagenmakersMarsmanJamil_2018, @RouderSpeckmanSun_2009, @KruschkeLiddell2018a, @KruschkeLiddell2018b, @OhaganForster2004, @RouderHaafVandekerckhove2018, @EtzGronauDablander_2018, @VanravenzwaaijMondenTendeiro_2019, @MoreyRouder2011, @Kruschke2018, @Kruschke2011, @LindeVanravenzwaaij2019preprint.
 
 # Superiority
 
