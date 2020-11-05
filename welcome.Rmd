@@ -21,19 +21,58 @@ Welcome! This website allows you to easily calculate Bayes factors for superiori
 
 Bayes factors express the relative plausibility of the obtained data under the null and alternative hypotheses (i.e., $\mathcal{H}_0$ and $\mathcal{H}_1$, respectively). One of the major advantages of Bayes factors is their ease of interpretation. For example, a Bayes factor of $\text{BF}_{10} = 10$ indicates that the data are $10$ times more likely to have occurred if $\mathcal{H}_1$ were true than if $\mathcal{H}_0$ were true. Alternatively, a Bayes factor of $\text{BF}_{10} = 0.1$ indicates that the data are $10$ ($1/0.1$) times more likely to have occurred if $\mathcal{H}_0$ were true compared to if $\mathcal{H}_1$ were true.
 
-This is not the right place for an in-depth treatment of Bayes factors. However, we provide a list of useful resources to learn about Bayesian statistics in general and Bayes factors specifically: @Kruschke2015, @EtzVandekerckhove2018, @GelmanCarlinStern_2013, @KassRaftery1995, @WagenmakersMarsmanJamil_2018, @RouderSpeckmanSun_2009, @KruschkeLiddell2018a, @KruschkeLiddell2018b, @OhaganForster2004, @RouderHaafVandekerckhove2018, @EtzGronauDablander_2018, @VanravenzwaaijMondenTendeiro_2019, @MoreyRouder2011, @Kruschke2018, @Kruschke2011, @LindeVanravenzwaaij2019preprint.
+This is not the right place for an in-depth treatment of Bayes factors. However, we provide a list of useful resources to learn about Bayesian statistics in general and Bayes factors specifically: @Kruschke2015, @EtzVandekerckhove2018, @GelmanCarlinStern_2013, @KassRaftery1995, @WagenmakersMarsmanJamil_2018, @RouderSpeckmanSun_2009, @KruschkeLiddell2018a, @KruschkeLiddell2018b, @OhaganForster2004, @RouderHaafVandekerckhove2018, @VanravenzwaaijMondenTendeiro_2019, @MoreyRouder2011, @Kruschke2018, @Kruschke2011, @LindeVanravenzwaaij2019preprint.
 
 # Superiority
 
-The superiority test gathers evidence of whether the experimental group is superior to the control group. Importantly, sometimes low and sometimes high values on the measure of interest represent superiority. By its very nature, the superiority test consists of a one-sided test. Oftentimes, however, the superiority test is conducted as a two-sided test with subsequent confirmation that the effect goes in the expected direction.
+The superiority test quantifies evidence of whether the experimental group is superior to the control group. Importantly, sometimes low and sometimes high values on the measure of interest represent superiority. By its very nature, the superiority test consists of a one-sided test. Oftentimes, however, the superiority test is conducted as a two-sided test with subsequent confirmation that the effect goes in the expected direction.
+
+For a two-sided test, the null and alternative hypotheses are:
+$$
+\begin{align}
+    \mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta \neq 0
+\end{align}
+$$
+For a one-sided test, where low values represent superiority, the null and alternative hypotheses are:
+$$
+\begin{align}
+    \mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta < 0 
+\end{align}
+$$
+For a one-sided test, where high values represent superiority, the null and alternative hypotheses are:
+$$
+\begin{align}
+    \mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta > 0 
+\end{align}
+$$
 
 # Non-inferiority
 
-The non-inferiority test gathers evidence of whether the experimental condition is not worse by a certain amount - which is given by the non-inferiority margin - than the control group. Here as well, sometimes low and sometimes high values on the outcome measure represent non-inferiority.
+The non-inferiority test quantifies evidence of whether the experimental condition is not worse by a certain amount - which is given by the non-inferiority margin - than the control group. Here as well, sometimes low and sometimes high values on the outcome measure represent non-inferiority.
+
+When low values represent non-inferiority, the null and alternative hypotheses are:
+$$
+\begin{align}
+    \mathcal{H}_0 \mathpunct{:} ~ \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta < m 
+\end{align}
+$$
+When high values represent non-inferiority, the null and alternative hypotheses are:
+$$
+\begin{align}
+    \mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m && \mathcal{H}_1 \mathpunct{:} ~ \delta > -m 
+\end{align}
+$$
 
 # Equivalence
 
-The equivalence test gathers evidence of whether the experimental and control groups are (practically) equivalent on some outcome measure. Equivalence could be defined by an interval that contains all the values that are considered practically equivalent to no effect or by setting a point null hypothesis.
+The equivalence test quantifies evidence of whether the experimental and control groups are (practically) equivalent on some outcome measure. Equivalence could be defined by an interval that contains all the values that are considered practically equivalent to no effect or by setting a point null hypothesis.
+
+The null and alternative hypotheses are:
+$$
+\begin{align}
+    \mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m ~ \text{OR} ~  \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta > - m ~ \text{AND} ~ \delta < m 
+\end{align}
+$$
 
 # About Us
 
@@ -44,40 +83,42 @@ The equivalence test gathers evidence of whether the experimental and control gr
   width: 50%;
   text-align: center;
   border-right: 1px solid black;
+  margin-bottom: 30px
 }
 .column-right{
   float: right;
   width: 50%;
   text-align: center;
   border-left: 1px solid black;
+  margin-bottom: 30px
 }
 </style>
 
 <div class="column-left">
-<img src="img/mlinde.jpeg" alt="Maximilian Linde" width="150" style="border-radius: 50%;">
-<p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p>
-<a href="https://github.com/maxlinde">
-<img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;">
-</a>
-<a href="https://twitter.com/maxlinde_">
-<img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
-</a>
-<a href="https://orcid.org/0000-0001-8421-090X">
-<img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
-</a>
+  <img src="img/mlinde.jpeg" alt="Maximilian Linde" width="150" style="border-radius: 50%;">
+  <p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p>
+  <a href="https://github.com/maxlinde">
+    <img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;">
+  </a>
+  <a href="https://twitter.com/maxlinde_">
+    <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
+  </a>
+  <a href="https://orcid.org/0000-0001-8421-090X">
+    <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
+  </a>
 </div>
 <div class="column-right">
-<img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;">
-<p>Don van Ravenzwaaij is associate professor at the University of Groningen</p>
-<a href="https://twitter.com/donvanraven">
-<img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
-</a>
-<a href="https://orcid.org/0000-0002-5030-4091">
-<img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
-</a>
-<a href="https://www.donvanravenzwaaij.com">
-<img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
-</a>
+  <img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;">
+  <p>Don van Ravenzwaaij is associate professor at the University of Groningen</p>
+  <a href="https://twitter.com/donvanraven">
+    <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
+  </a>
+  <a href="https://orcid.org/0000-0002-5030-4091">
+    <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
+  </a>
+  <a href="https://www.donvanravenzwaaij.com">
+    <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
+  </a>
 </div>
 ```
 
