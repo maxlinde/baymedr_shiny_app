@@ -17,23 +17,23 @@ csl:
 
 Welcome. This website allows you to easily calculate Bayes factors for the superiority, non-inferiority, and equivalence designs. This website was built using Shiny and implements the baymedr software [@LindeVanravenzwaaij2019_0.1.0], written in R [@Rcoreteam2019], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible for every researcher.
 
-## Bayes factors
+# Bayes Factors
 
 bla bla bla
 
-## Superiority
+# Superiority
 
 The superiority test gathers evidence of whether the experimental group is superior to the control group. Importantly, sometimes low and sometimes high values on the measure of interest represent superiority. By its very nature, the superiority test consists of a one-sided test. Oftentimes, however, the superiority test is conducted as a two-sided test with subsequent confirmation that the effect goes in the expected direction.
 
-## Non-inferiority
+# Non-inferiority
 
 The non-inferiority test gathers evidence of whether the experimental condition is not worse by a certain amount - which is given by the non-inferiority margin - than the control group. Here as well, sometimes low and sometimes high values on the outcome measure represent non-inferiority.
 
-## Equivalence
+# Equivalence
 
 The equivalence test gathers evidence of whether the experimental and control groups are (practically) equivalent on some outcome measure. Equivalence could be defined by an interval that contains all the values that are considered practically equivalent to no effect or by setting a point null hypothesis.
 
-## About us
+# About Us
 
 ```{=html}
 <style>
@@ -78,5 +78,11 @@ The equivalence test gathers evidence of whether the experimental and control gr
 </a>
 </div>
 ```
+
+# Contact and Source Code
+
+The source code for this Shiny app can be found on [GitHub](https://github.com/maxlinde/baymedr_shiny_app). The underlying baymedr R package [@LindeVanravenzwaaij2019_0.1.0] is available on [CRAN](https://CRAN.R-project.org/package=baymedr) and the source code of the most recent version is available on [GitHub](https://github.com/maxlinde/baymedr).
+
+Questions, bug reports, and suggestions for improvement are welcomed and appreciated. Please contact Max via email (<m.linde@rug.nl>) or use the corresponding functionalities on [GitHub](https://github.com/maxlinde/baymedr_shiny_app).
 
 # References
