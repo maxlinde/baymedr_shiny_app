@@ -27,7 +27,9 @@ ui <- fluidPage(
         # welcome tab
         tabPanel(
             title = "Welcome",
-            uiOutput("welcome")
+            withMathJax(
+                uiOutput("welcome")
+            )
         ),
         # superiority menu
         navbarMenu(
