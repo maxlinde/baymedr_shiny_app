@@ -7,7 +7,7 @@ infer_plot <- function(n_x = n_x,
                        prior_scale = prior_scale,
                        bf = bf,
                        bf_all = bf_all,
-                       direction = directio) {
+                       direction = direction) {
     colours <- brewer.pal(
         n = 4,
         name = "Set1"
