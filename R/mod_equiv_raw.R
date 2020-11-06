@@ -21,17 +21,14 @@ equivRawUi <- function(id) {
         tags$hr(),
         fluidRow(
             column(
-                width = 4,
+                width = 6,
                 general_ui(ns("prior_scale")),
                 plotOutput(ns("prior_scale_plot"))
             ),
             column(
-                width = 4,
+                width = 6,
                 equiv_ui(ns("interval_low")),
-                equiv_ui(ns("interval_high"))
-            ),
-            column(
-                width = 4,
+                equiv_ui(ns("interval_high")),
                 equiv_ui(ns("interval_std"))
             )
         ),

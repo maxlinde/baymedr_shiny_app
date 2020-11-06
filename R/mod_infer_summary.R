@@ -19,17 +19,14 @@ inferSummaryUi <- function(id) {
         tags$hr(),
         fluidRow(
             column(
-                width = 4,
+                width = 6,
                 general_ui(ns("prior_scale")),
                 plotOutput(ns("prior_scale_plot"))
             ),
             column(
-                width = 4,
+                width = 6,
                 infer_ui(ns("ni_margin")),
-                infer_ui(ns("ni_margin_std"))
-            ),
-            column(
-                width = 4,
+                infer_ui(ns("ni_margin_std")),
                 infer_ui(ns("direction"))
             )
         ),
