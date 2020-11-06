@@ -22,7 +22,8 @@ superRawUi <- function(id) {
         fluidRow(
             column(
                 width = 6,
-                general_ui(ns("prior_scale"))
+                general_ui(ns("prior_scale")),
+                plotOutput(ns("prior_scale_plot"))
             ),
             column(
                 width = 6,
@@ -53,6 +54,13 @@ superRawServer <- function(id) {
     moduleServer(
         id = id,
         module = function(input, output, session) {
+            output$prior_scale_plot <- renderPlot(
+                expr = {
+                    prior_scale_plot(
+                        prior_scale = input$prior_scale
+                    )
+                }
+            )
             dat <- dataUploadServer(
                 id = "dataUpload"
             )

@@ -20,7 +20,8 @@ equivSummaryUi <- function(id) {
         fluidRow(
             column(
                 width = 4,
-                general_ui(ns("prior_scale"))
+                general_ui(ns("prior_scale")),
+                plotOutput(ns("prior_scale_plot"))
             ),
             column(
                 width = 4,
@@ -56,6 +57,13 @@ equivSummaryServer <- function(id) {
     moduleServer(
         id = id,
         module = function(input, output, session) {
+            output$prior_scale_plot <- renderPlot(
+                expr = {
+                    prior_scale_plot(
+                        prior_scale = input$prior_scale
+                    )
+                }
+            )
             results <- eventReactive(
                 eventExpr = {
                     input$submit
