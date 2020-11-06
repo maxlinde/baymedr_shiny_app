@@ -19,16 +19,12 @@ superSummaryUi <- function(id) {
         tags$hr(),
         fluidRow(
             column(
-                width = 4,
+                width = 6,
                 general_ui(ns("prior_scale"))
             ),
             column(
-                width = 4,
+                width = 6,
                 super_ui(ns("direction"))
-            ),
-            column(
-                width = 4,
-                super_ui(ns("alternative"))
             )
         ),
         tags$hr(),
@@ -71,8 +67,7 @@ superSummaryServer <- function(id) {
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
                         prior_scale = input$prior_scale,
-                        direction = input$direction,
-                        alternative = input$alternative
+                        direction = input$direction
                     )
                 }
             )

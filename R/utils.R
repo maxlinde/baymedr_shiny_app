@@ -207,16 +207,6 @@ super_ui <- function(id) {
                 nm = c("Low", "High")
             ),
             selected = "high"
-        ),
-        # alternative
-        alternative = radioButtons(
-            inputId = id,
-            label = "Do you want a one-sided or two-sided test?",
-            choices = setNames(
-                object = c("one.sided", "two.sided"),
-                nm = c("One-sided", "Two-sided")
-            ),
-            selected = "one.sided"
         )
     )
 }

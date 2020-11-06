@@ -5,8 +5,7 @@ super_show <- function(n_x = n_x,
                        hypotheses = hypotheses,
                        prior_scale = prior_scale,
                        bf = bf,
-                       direction = direction,
-                       alternative = alternative) {
+                       direction = direction) {
     cat(
         strrep(
             x = "*",
@@ -23,14 +22,10 @@ super_show <- function(n_x = n_x,
         "H0 (non-superiority):         ",
         hypotheses$h0,
         "\n",
-        if (alternative == "one.sided") {
-            if (direction == "low") {
-                "H- (superiority):             "
-            } else {
-                "H+ (superiority):             "
-            }
+        if (direction == "low") {
+            "H- (superiority):             "
         } else {
-                "H1 (superiority):             "
+            "H+ (superiority):             "
         },
         hypotheses$h1,
         "\n",
@@ -42,14 +37,10 @@ super_show <- function(n_x = n_x,
         ),
         "\n",
         "\n",
-        if (alternative == "one.sided") {
-            if (direction == "low") {
-                "    BF-0 (superiority) = "
-            } else {
-                "    BF+0 (superiority) = "
-            }
+        if (direction == "low") {
+            "    BF-0 (superiority) = "
         } else {
-            "    BF10 (superiority) = "
+            "    BF+0 (superiority) = "
         },
         if (bf > 1 / 1000 & bf < 1000) {
             formatC(

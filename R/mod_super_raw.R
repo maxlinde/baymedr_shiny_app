@@ -21,16 +21,12 @@ superRawUi <- function(id) {
         tags$hr(),
         fluidRow(
             column(
-                width = 4,
+                width = 6,
                 general_ui(ns("prior_scale"))
             ),
             column(
-                width = 4,
+                width = 6,
                 super_ui(ns("direction"))
-            ),
-            column(
-                width = 4,
-                super_ui(ns("alternative"))
             )
         ),
         tags$hr(),
@@ -70,8 +66,7 @@ superRawServer <- function(id) {
                         x = dat$data()[[dat$control()]],
                         y = dat$data()[[dat$experimental()]],
                         prior_scale = input$prior_scale,
-                        direction = input$direction,
-                        alternative = input$alternative
+                        direction = input$direction
                     )
                 }
             )

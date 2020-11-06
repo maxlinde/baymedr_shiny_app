@@ -9,8 +9,7 @@ super_bf <- function(x = NULL,
                      ci_margin = NULL,
                      ci_level = NULL,
                      prior_scale,
-                     direction,
-                     alternative) {
+                     direction) {
     
     if (!is.null(x) && !is.null(y)) {
         n_x <- length(x)
@@ -37,19 +36,13 @@ super_bf <- function(x = NULL,
                   prior_loc = 0,
                   prior_scale = prior_scale,
                   prior_df = 1)
-    if (str_detect(alternative,
-                   "one.sided")) {
-        if (str_detect(direction,
-                       "low")) {
-            bf <- res$bf_min0
-            h1 <- "mu_y < mu_x"
-        } else {
-            bf <- res$bf_plus0
-            h1 <- "mu_y > mu_x"
-        }
+    if (str_detect(direction,
+                   "low")) {
+        bf <- res$bf_min0
+        h1 <- "mu_y < mu_x"
     } else {
-        bf <- res$bf_10
-        h1 <- "mu_y != mu_x"
+        bf <- res$bf_plus0
+        h1 <- "mu_y > mu_x"
     }
     test <- "Superiority analysis"
     h0 <- "mu_y == mu_x"
@@ -62,6 +55,5 @@ super_bf <- function(x = NULL,
          hypotheses = hypotheses,
          prior_scale = prior_scale,
          bf = bf,
-         direction = direction,
-         alternative = alternative)
+         direction = direction)
 }
