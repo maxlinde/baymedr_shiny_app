@@ -206,8 +206,7 @@ infer_plot <- function(n_x = n_x,
         ) +
         scale_y_continuous(
             name = "Density",
-            limits = y_lim_m0,
-            expand = c(0, 0)
+            limits = y_lim_m0
         ) +
         scale_linetype_manual(
             name = NULL,
@@ -388,8 +387,7 @@ infer_plot <- function(n_x = n_x,
         ) +
         scale_y_continuous(
             name = "Density",
-            limits = y_lim_p0,
-            expand = c(0, 0)
+            limits = y_lim_p0
         ) +
         scale_linetype_manual(
             name = NULL,

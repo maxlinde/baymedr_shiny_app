@@ -129,8 +129,7 @@ equiv_plot <- function(n_x = n_x,
             ) +
             scale_y_continuous(
                 name = "Density",
-                limits = y_lim,
-                expand = c(0, 0)
+                limits = y_lim
             ) +
             scale_linetype_manual(
                 name = NULL,
@@ -359,8 +358,7 @@ equiv_plot <- function(n_x = n_x,
             ) +
             scale_y_continuous(
                 name = "Density",
-                limits = y_lim,
-                expand = c(0, 0)
+                limits = y_lim
             ) +
             scale_linetype_manual(
                 name = NULL,
