@@ -37,6 +37,23 @@ superSummaryUi <- function(id) {
             column(
                 width = 6,
                 results_ui(ns("results_show")),
+                hidden(
+                    div(
+                        id = ns("freq_button"),
+                        actionButton(
+                            inputId = ns("show_freq"),
+                            label = "Show frequentist results."
+                        )
+                    )
+                ),
+                hidden(
+                    div(
+                        id = ns("results_freq"),
+                        verbatimTextOutput(
+                            outputId = ns("res_freq")
+                        )
+                    )
+                ),
                 results_ui(ns("results_form"))
             ),
             column(
@@ -79,6 +96,25 @@ superSummaryServer <- function(id) {
                     )
                 }
             )
+            results_freq <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_calculate_freq(
+                        id = id,
+                        n_x = input$n_x,
+                        n_y = input$n_y,
+                        mean_x = input$mean_x,
+                        mean_y = input$mean_y,
+                        sd_x = input$sd_x,
+                        sd_y = input$sd_y,
+                        ci_margin = input$ci_margin,
+                        ci_level = input$ci_level,
+                        direction = input$direction
+                    )
+                }
+            )
             show <- eventReactive(
                 eventExpr = {
                     input$submit
@@ -93,6 +129,43 @@ superSummaryServer <- function(id) {
             output$results_show <- renderPrint(
                 expr = {
                     show()
+                }
+            )
+            observeEvent(
+                eventExpr = {
+                    input$submit
+                },
+                handlerExpr = {
+                    shinyjs::show(
+                        id = "freq_button"
+                    )
+                }
+            )
+            observeEvent(
+                eventExpr = {
+                    input$show_freq
+                },
+                handlerExpr = {
+                    shinyjs::toggle(
+                        id = "results_freq",
+                        anim = TRUE
+                    )
+                }
+            )
+            show_freq <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_show_freq(
+                        id = id,
+                        results_freq()
+                    )
+                }
+            )
+            output$res_freq <- renderPrint(
+                expr = {
+                    show_freq()
                 }
             )
             form <- eventReactive(
