@@ -13,6 +13,7 @@ library("rlang")
 library("scales")
 library("rmarkdown")
 library("shinyhelper")
+library("shinyjs")
 
 # user interface
 ui <- fluidPage(
@@ -20,6 +21,7 @@ ui <- fluidPage(
     theme = shinytheme(
         theme = "cosmo"
     ),
+    useShinyjs(),
     # navigation bar
     navbarPage(
         # title
