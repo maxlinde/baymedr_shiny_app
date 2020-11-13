@@ -39,10 +39,23 @@ superSummaryUi <- function(id) {
                 results_ui(ns("results_show")),
                 hidden(
                     div(
-                        id = ns("freq_button"),
+                        id = ns("freq_button_expand"),
                         actionButton(
-                            inputId = ns("show_freq"),
-                            label = "Show frequentist results."
+                            inputId = ns("show_freq_expand"),
+                            label = "Show frequentist results",
+                            icon = icon("chevron-up"),
+                            class = "btn btn-link btn-sm"
+                        )
+                    )
+                ),
+                hidden(
+                    div(
+                        id = ns("freq_button_collapse"),
+                        actionButton(
+                            inputId = ns("show_freq_collapse"),
+                            label = "Hide frequentist results",
+                            icon = icon("chevron-down"),
+                            class = "btn btn-link btn-sm"
                         )
                     )
                 ),
@@ -137,18 +150,41 @@ superSummaryServer <- function(id) {
                 },
                 handlerExpr = {
                     shinyjs::show(
-                        id = "freq_button"
+                        id = "freq_button_expand"
                     )
                 }
             )
             observeEvent(
                 eventExpr = {
-                    input$show_freq
+                    input$show_freq_expand
                 },
                 handlerExpr = {
-                    shinyjs::toggle(
+                    shinyjs::show(
                         id = "results_freq",
                         anim = TRUE
+                    )
+                    shinyjs::hide(
+                        id = "freq_button_expand"
+                    )
+                    shinyjs::show(
+                        id = "freq_button_collapse"
+                    )
+                }
+            )
+            observeEvent(
+                eventExpr = {
+                    input$show_freq_collapse
+                },
+                handlerExpr = {
+                    shinyjs::hide(
+                        id = "results_freq",
+                        anim = TRUE
+                    )
+                    shinyjs::hide(
+                        id = "freq_button_collapse"
+                    )
+                    shinyjs::show(
+                        id = "freq_button_expand"
                     )
                 }
             )
