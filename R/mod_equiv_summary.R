@@ -32,6 +32,7 @@ equivSummaryUi <- function(id) {
         ),
         tags$hr(),
         fluidRow(
+            align = "center",
             general_ui(ns("submit"))
         ),
         tags$hr(),
