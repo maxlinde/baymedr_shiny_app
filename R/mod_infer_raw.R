@@ -151,6 +151,13 @@ inferRawServer <- function(id) {
                     shinyjs::show(
                         id = "freq_button_expand"
                     )
+                    shinyjs::hide(
+                        id = "freq_button_collapse"
+                    )
+                    shinyjs::hide(
+                        id = "results_freq",
+                        anim = TRUE
+                    )
                 }
             )
             observeEvent(
