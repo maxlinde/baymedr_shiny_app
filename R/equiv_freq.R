@@ -29,7 +29,7 @@ equiv_freq <- function(x = NULL,
         se <- ci_margin / qt(p = perc,
                              df = df)
     }
-    if (isFALSE(interval_std)) {
+    if (interval_std == 0) {
         interval_low_std <- interval_low / sd_pooled
         interval_high_std <- interval_high / sd_pooled
         interval_low_unstd <- interval_low

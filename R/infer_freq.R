@@ -31,7 +31,7 @@ infer_freq <- function(x = NULL,
     }
     if (str_detect(direction,
                    "low")) {
-        if (isFALSE(ni_margin_std)) {
+        if (ni_margin_std == 0) {
             ni_margin_std <- ni_margin / sd_pooled
             ni_margin_unstd <- ni_margin
         } else {
@@ -43,7 +43,7 @@ infer_freq <- function(x = NULL,
                       df = df,
                       lower.tail = TRUE)
     } else {
-        if (isFALSE(ni_margin_std)) {
+        if (ni_margin_std == 0) {
             ni_margin_std <- -ni_margin / sd_pooled
             ni_margin_unstd <- -ni_margin
         } else {

@@ -133,10 +133,10 @@ equiv_ui <- function(id) {
             inputId = id,
             label = "Unit for the equivalence interval",
             choices = setNames(
-                object = c("TRUE", "FALSE"),
+                object = c(1, 0),
                 nm = c("Standardised", "Unstandardised")
             ),
-            selected = "TRUE"
+            selected = 1
         )
     )
 }
@@ -169,10 +169,10 @@ infer_ui <- function(id) {
             inputId = id,
             label = "Unit for the non-inferiority margin",
             choices = setNames(
-                object = c("TRUE", "FALSE"),
+                object = c(1, 0),
                 nm = c("Standardised", "Unstandardised")
             ),
-            selected = "TRUE"
+            selected = 1
         ),
         # direction
         direction = radioButtons(
