@@ -58,7 +58,7 @@ infer_bf <- function(x = NULL,
             ni_margin_std <- -ni_margin
             ni_margin_unstd <- -ni_margin * sd_pooled
         }
-        t_stat <- (mean_y - mean_x + ni_margin_unstd) / se
+        t_stat <- (mean_y - mean_x - ni_margin_unstd) / se
         res <- bf10_t(t = t_stat,
                       n_x = n_x,
                       n_y = n_y,
