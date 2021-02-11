@@ -44,7 +44,7 @@ infer_bf <- function(x = NULL,
                       n_x = n_x,
                       n_y = n_y,
                       ind_samples = TRUE,
-                      prior_loc = ni_margin_std,
+                      prior_loc = -ni_margin_std,
                       prior_scale = prior_scale,
                       prior_df = 1)
         bf <- res$bf_min0 / res$bf_plus0
@@ -63,7 +63,7 @@ infer_bf <- function(x = NULL,
                       n_x = n_x,
                       n_y = n_y,
                       ind_samples = TRUE,
-                      prior_loc = ni_margin_std,
+                      prior_loc = -ni_margin_std,
                       prior_scale = prior_scale,
                       prior_df = 1)
         bf <- res$bf_plus0 / res$bf_min0
