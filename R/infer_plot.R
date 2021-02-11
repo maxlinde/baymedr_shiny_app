@@ -14,12 +14,12 @@ infer_plot <- function(n_x = n_x,
     )
     hdi80_prior_low <- qcauchy(
         p = 0.1,
-        location = ni_margin$ni_margin_std,
+        location = -ni_margin$ni_margin_std,
         scale = prior_scale
     )
     hdi80_prior_high <- qcauchy(
         p = 0.9,
-        location = ni_margin$ni_margin_std,
+        location = -ni_margin$ni_margin_std,
         scale = prior_scale
     )
     hdi95_posterior_low <- unlist(
@@ -28,7 +28,7 @@ infer_plot <- function(n_x = n_x,
             n_x = n_x,
             n_y = n_y,
             ind_samples = TRUE,
-            prior_loc = ni_margin$ni_margin_std,
+            prior_loc = -ni_margin$ni_margin_std,
             prior_scale = prior_scale,
             prior_df = 1
         )$ci_lower
@@ -39,7 +39,7 @@ infer_plot <- function(n_x = n_x,
             n_x = n_x,
             n_y = n_y,
             ind_samples = TRUE,
-            prior_loc = ni_margin$ni_margin_std,
+            prior_loc = -ni_margin$ni_margin_std,
             prior_scale = prior_scale,
             prior_df = 1
         )$ci_upper
@@ -50,7 +50,7 @@ infer_plot <- function(n_x = n_x,
         spec = "cauchy",
         a = -Inf,
         b = 0,
-        location = ni_margin$ni_margin_std,
+        location = -ni_margin$ni_margin_std,
         scale = prior_scale,
         maximum = TRUE,
         tol = 0.00000000001
@@ -62,7 +62,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1,
         maximum = TRUE,
@@ -73,7 +73,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1
     )
@@ -86,7 +86,7 @@ infer_plot <- function(n_x = n_x,
         spec = "cauchy",
         a = -Inf,
         b = 0,
-        location = ni_margin$ni_margin_std,
+        location = -ni_margin$ni_margin_std,
         scale = prior_scale
     )
     dens_posterior0_m0 <- posterior_t(
@@ -95,7 +95,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1
     ) / cdf_t(
@@ -104,7 +104,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1
     )
@@ -125,7 +125,7 @@ infer_plot <- function(n_x = n_x,
             args = list(spec = "cauchy",
                         a = -Inf,
                         b = 0,
-                        location = ni_margin$ni_margin_std,
+                        location = -ni_margin$ni_margin_std,
                         scale = prior_scale)
         ) +
         stat_function(
@@ -138,7 +138,7 @@ infer_plot <- function(n_x = n_x,
                             n_x = n_x,
                             n_y = n_y,
                             ind_samples = TRUE,
-                            prior_loc = ni_margin$ni_margin_std,
+                            prior_loc = -ni_margin$ni_margin_std,
                             prior_scale = prior_scale,
                             prior_df = 1) / cdf_t(
                                 x = 0,
@@ -146,7 +146,7 @@ infer_plot <- function(n_x = n_x,
                                 n_x = n_x,
                                 n_y = n_y,
                                 ind_samples = TRUE,
-                                prior_loc = ni_margin$ni_margin_std,
+                                prior_loc = -ni_margin$ni_margin_std,
                                 prior_scale = prior_scale,
                                 prior_df = 1
                             )
@@ -231,7 +231,7 @@ infer_plot <- function(n_x = n_x,
         spec = "cauchy",
         a = 0,
         b = Inf,
-        location = ni_margin$ni_margin_std,
+        location = -ni_margin$ni_margin_std,
         scale = prior_scale,
         maximum = TRUE,
         tol = 0.00000000001
@@ -243,7 +243,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1,
         maximum = TRUE,
@@ -254,7 +254,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1
     ))
@@ -267,7 +267,7 @@ infer_plot <- function(n_x = n_x,
         spec = "cauchy",
         a = 0,
         b = Inf,
-        location = ni_margin$ni_margin_std,
+        location = -ni_margin$ni_margin_std,
         scale = prior_scale
     )
     dens_posterior0_p0 <- posterior_t(
@@ -276,7 +276,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1
     ) / (1 - cdf_t(
@@ -285,7 +285,7 @@ infer_plot <- function(n_x = n_x,
         n_x = n_x,
         n_y = n_y,
         ind_samples = TRUE,
-        prior_loc = ni_margin$ni_margin_std,
+        prior_loc = -ni_margin$ni_margin_std,
         prior_scale = prior_scale,
         prior_df = 1
     ))
@@ -306,7 +306,7 @@ infer_plot <- function(n_x = n_x,
             args = list(spec = "cauchy",
                         a = 0,
                         b = Inf,
-                        location = ni_margin$ni_margin_std,
+                        location = -ni_margin$ni_margin_std,
                         scale = prior_scale)
         ) +
         stat_function(
@@ -319,7 +319,7 @@ infer_plot <- function(n_x = n_x,
                             n_x = n_x,
                             n_y = n_y,
                             ind_samples = TRUE,
-                            prior_loc = ni_margin$ni_margin_std,
+                            prior_loc = -ni_margin$ni_margin_std,
                             prior_scale = prior_scale,
                             prior_df = 1) / (1 - cdf_t(
                                 x = 0,
@@ -327,7 +327,7 @@ infer_plot <- function(n_x = n_x,
                                 n_x = n_x,
                                 n_y = n_y,
                                 ind_samples = TRUE,
-                                prior_loc = ni_margin$ni_margin_std,
+                                prior_loc = -ni_margin$ni_margin_std,
                                 prior_scale = prior_scale,
                                 prior_df = 1
                             ))
