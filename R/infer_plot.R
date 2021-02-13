@@ -44,39 +44,71 @@ infer_plot <- function(n_x = n_x,
             prior_df = 1
         )$ci_upper
     )
-    max_dens_prior_m0 <- optimize(
-        f = dtrunc,
-        interval = c(hdi80_prior_low, 0),
-        spec = "cauchy",
-        a = -Inf,
-        b = 0,
-        location = -ni_margin$ni_margin_std,
-        scale = prior_scale,
-        maximum = TRUE,
-        tol = 0.00000000001
-    )$objective
-    max_dens_posterior_m0 <- optimize(
-        f = posterior_t,
-        interval = c(hdi95_posterior_low, 0),
-        t = t,
-        n_x = n_x,
-        n_y = n_y,
-        ind_samples = TRUE,
-        prior_loc = -ni_margin$ni_margin_std,
-        prior_scale = prior_scale,
-        prior_df = 1,
-        maximum = TRUE,
-        tol = 0.00000000001
-    )$objective / cdf_t(
-        x = 0,
-        t = t,
-        n_x = n_x,
-        n_y = n_y,
-        ind_samples = TRUE,
-        prior_loc = -ni_margin$ni_margin_std,
-        prior_scale = prior_scale,
-        prior_df = 1
-    )
+    if (direction == "low") {
+        max_dens_prior_m0 <- dcauchy(
+            x = -ni_margin$ni_margin_std,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale
+        ) / pcauchy(
+            q = 0,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale
+        )
+    } else {
+        max_dens_prior_m0 <- dcauchy(
+            x = 0,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale
+        ) / pcauchy(
+            q = 0,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale
+        )
+    }
+    if (hdi95_posterior_low > 0) {
+        max_dens_posterior_m0 <- posterior_t(
+            delta = 0,
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1
+        ) / cdf_t(
+            x = 0,
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1
+        )
+    } else {
+        max_dens_posterior_m0 <- optimize(
+            f = posterior_t,
+            interval = c(hdi95_posterior_low, 0),
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1,
+            maximum = TRUE,
+            tol = 0.00000000001
+        )$objective / cdf_t(
+            x = 0,
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1
+        )
+    }
     x_lim <- c(min(hdi80_prior_low, hdi95_posterior_low),
                max(hdi80_prior_high, hdi95_posterior_high))
     y_lim_m0 <- c(0,
@@ -225,39 +257,73 @@ infer_plot <- function(n_x = n_x,
             legend.position = c(0.5, 0.9),
             legend.key.width = unit(2.5, "cm")
         )
-    max_dens_prior_p0 <- optimize(
-        f = dtrunc,
-        interval = c(0, hdi80_prior_high),
-        spec = "cauchy",
-        a = 0,
-        b = Inf,
-        location = -ni_margin$ni_margin_std,
-        scale = prior_scale,
-        maximum = TRUE,
-        tol = 0.00000000001
-    )$objective
-    max_dens_posterior_p0 <- optimize(
-        f = posterior_t,
-        interval = c(0, hdi95_posterior_high),
-        t = t,
-        n_x = n_x,
-        n_y = n_y,
-        ind_samples = TRUE,
-        prior_loc = -ni_margin$ni_margin_std,
-        prior_scale = prior_scale,
-        prior_df = 1,
-        maximum = TRUE,
-        tol = 0.00000000001
-    )$objective / (1 - cdf_t(
-        x = 0,
-        t = t,
-        n_x = n_x,
-        n_y = n_y,
-        ind_samples = TRUE,
-        prior_loc = -ni_margin$ni_margin_std,
-        prior_scale = prior_scale,
-        prior_df = 1
-    ))
+    if (direction == "low") {
+        max_dens_prior_p0 <- dcauchy(
+            x = 0,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale
+        ) / pcauchy(
+            q = 0,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale,
+            lower.tail = FALSE
+        )
+    } else {
+        max_dens_prior_p0 <- dcauchy(
+            x = -ni_margin$ni_margin_std,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale
+        ) / pcauchy(
+            q = 0,
+            location = -ni_margin$ni_margin_std,
+            scale = prior_scale,
+            lower.tail = FALSE
+        )
+    }
+    if (hdi95_posterior_high < 0) {
+        max_dens_posterior_p0 <- posterior_t(
+            delta = 0,
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1
+        ) / (1 - cdf_t(
+            x = 0,
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1
+        ))
+    } else {
+        max_dens_posterior_p0 <- optimize(
+            f = posterior_t,
+            interval = c(0, hdi95_posterior_high),
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1,
+            maximum = TRUE,
+            tol = 0.00000000001
+        )$objective / (1 - cdf_t(
+            x = 0,
+            t = t,
+            n_x = n_x,
+            n_y = n_y,
+            ind_samples = TRUE,
+            prior_loc = -ni_margin$ni_margin_std,
+            prior_scale = prior_scale,
+            prior_df = 1
+        ))
+    }
     x_lim <- c(min(hdi80_prior_low, hdi95_posterior_low),
                max(hdi80_prior_high, hdi95_posterior_high))
     y_lim_p0 <- c(0,
