@@ -5,11 +5,9 @@ integrand_t <- function(delta,
                         mu_delta,
                         gamma,
                         kappa) {
-    suppressWarnings(
-        dt(
-            x = t,
-            df = nu,
-            ncp = sqrt(n) * delta) * 1 / gamma * dt(
-                (delta - mu_delta) / gamma,
-                df = kappa))
+    dt(x = t,
+       df = nu,
+       ncp = sqrt(n) * delta) * 1 / gamma *
+        dt(x = (delta - mu_delta) / gamma,
+           df = kappa)
 }
