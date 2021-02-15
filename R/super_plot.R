@@ -146,23 +146,23 @@ super_plot <- function(n_x = n_x,
                     linetype = "posterior"
                 ),
                 fun = function(x) {
-                    posterior_t(delta = x,
-                                t = t,
-                                n_x = n_x,
-                                n_y = n_y,
-                                ind_samples = TRUE,
-                                prior_loc = 0,
-                                prior_scale = prior_scale,
-                                prior_df = 1) / cdf_t(
-                                    x = 0,
+                    posterior_t_cpp(delta = x,
                                     t = t,
                                     n_x = n_x,
                                     n_y = n_y,
                                     ind_samples = TRUE,
                                     prior_loc = 0,
                                     prior_scale = prior_scale,
-                                    prior_df = 1
-                                )
+                                    prior_df = 1) / cdf_t(
+                                        x = 0,
+                                        t = t,
+                                        n_x = n_x,
+                                        n_y = n_y,
+                                        ind_samples = TRUE,
+                                        prior_loc = 0,
+                                        prior_scale = prior_scale,
+                                        prior_df = 1
+                                    )
                 },
                 n = 10001,
                 xlim = c(x_lim[1], 0),
@@ -334,23 +334,23 @@ super_plot <- function(n_x = n_x,
                     linetype = "posterior"
                 ),
                 fun = function(x) {
-                    posterior_t(delta = x,
-                                t = t,
-                                n_x = n_x,
-                                n_y = n_y,
-                                ind_samples = TRUE,
-                                prior_loc = 0,
-                                prior_scale = prior_scale,
-                                prior_df = 1) / (1 - cdf_t(
-                                    x = 0,
+                    posterior_t_cpp(delta = x,
                                     t = t,
                                     n_x = n_x,
                                     n_y = n_y,
                                     ind_samples = TRUE,
                                     prior_loc = 0,
                                     prior_scale = prior_scale,
-                                    prior_df = 1
-                                ))
+                                    prior_df = 1) / (1 - cdf_t(
+                                        x = 0,
+                                        t = t,
+                                        n_x = n_x,
+                                        n_y = n_y,
+                                        ind_samples = TRUE,
+                                        prior_loc = 0,
+                                        prior_scale = prior_scale,
+                                        prior_df = 1
+                                    ))
                 },
                 n = 10001,
                 xlim = c(0, x_lim[2]),

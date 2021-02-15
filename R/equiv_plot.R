@@ -97,7 +97,7 @@ equiv_plot <- function(n_x = n_x,
                 mapping = aes(
                     linetype = "posterior"
                 ),
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 n = 10001,
                 xlim = x_lim,
                 size = 2,
@@ -192,7 +192,7 @@ equiv_plot <- function(n_x = n_x,
                 mapping = aes(
                     linetype = "posterior"
                 ),
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 n = 10001,
                 xlim = c(x_lim[1], interval$interval_low_std),
                 size = 2,
@@ -208,7 +208,7 @@ equiv_plot <- function(n_x = n_x,
                 mapping = aes(
                     linetype = "posterior"
                 ),
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 n = 10001,
                 xlim = c(interval$interval_high_std, x_lim[2]),
                 size = 2,
@@ -224,7 +224,7 @@ equiv_plot <- function(n_x = n_x,
                 mapping = aes(
                     linetype = "posterior"
                 ),
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 n = 10001,
                 xlim = c(interval$interval_low_std, interval$interval_high_std),
                 size = 2,
@@ -238,7 +238,7 @@ equiv_plot <- function(n_x = n_x,
             ) +
             geom_area_pattern(
                 stat = "function",
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 args = list(t = t,
                             n_x = n_x,
                             n_y = n_y,
@@ -259,7 +259,7 @@ equiv_plot <- function(n_x = n_x,
             ) +
             geom_area_pattern(
                 stat = "function",
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 args = list(t = t,
                             n_x = n_x,
                             n_y = n_y,
@@ -280,7 +280,7 @@ equiv_plot <- function(n_x = n_x,
             ) +
             geom_area_pattern(
                 stat = "function",
-                fun = posterior_t,
+                fun = posterior_t_cpp,
                 args = list(t = t,
                             n_x = n_x,
                             n_y = n_y,
