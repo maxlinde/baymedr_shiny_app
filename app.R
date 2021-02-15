@@ -14,6 +14,9 @@ library("scales")
 library("rmarkdown")
 library("shinyhelper")
 library("shinyjs")
+library("Rcpp")
+
+sapply(paste0("src/", list.files(path = "src/")), sourceCpp)
 
 # user interface
 ui <- fluidPage(
