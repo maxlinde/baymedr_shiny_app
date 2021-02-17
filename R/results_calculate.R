@@ -1,4 +1,9 @@
 results_calculate <- function(id, ...) {
+    name <- str_sub(
+        string = id,
+        start = 1,
+        end = 5
+    )
     arguments <- list(...)
     arguments$prior_scale <- eval(
         parse(
@@ -6,30 +11,18 @@ results_calculate <- function(id, ...) {
         )
     )
     switch(
-        id,
-        equivRaw = do.call(
+        name,
+        equiv = do.call(
             what = equiv_bf,
             args = arguments
         ),
-        equivSummary = do.call(
-            what = equiv_bf,
-            args = arguments
-        ),
-        inferRaw = do.call(
+        infer = do.call(
             what = infer_bf,
             args = arguments
         ),
-        inferSummary = do.call(
-            what = infer_bf,
-            args = arguments
-        ),
-        superRaw = do.call(
+        super = do.call(
             what = super_bf,
             args = arguments
-        ),
-        superSummary = do.call(
-            what = super_bf,
-            args = arguments
-        ),
+        )
     )
 }

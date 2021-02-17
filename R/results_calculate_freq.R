@@ -1,30 +1,23 @@
 results_calculate_freq <- function(id, ...) {
+    name <- str_sub(
+        string = id,
+        start = 1,
+        end = 5
+    )
     arguments <- list(...)
     switch(
-        id,
-        equivRaw = do.call(
+        name,
+        equiv = do.call(
             what = equiv_freq,
             args = arguments
         ),
-        equivSummary = do.call(
-            what = equiv_freq,
-            args = arguments
-        ),
-        inferRaw = do.call(
+        infer = do.call(
             what = infer_freq,
             args = arguments
         ),
-        inferSummary = do.call(
-            what = infer_freq,
-            args = arguments
-        ),
-        superRaw = do.call(
+        super = do.call(
             what = super_freq,
             args = arguments
-        ),
-        superSummary = do.call(
-            what = super_freq,
-            args = arguments
-        ),
+        )
     )
 }
