@@ -133,10 +133,10 @@ equiv_ui <- function(id) {
             inputId = id,
             label = "Unit for the equivalence interval",
             choices = setNames(
-                object = c(1, 0),
+                object = c("std", "unstd"),
                 nm = c("Standardised", "Unstandardised")
             ),
-            selected = 1
+            selected = "std"
         )
     )
 }

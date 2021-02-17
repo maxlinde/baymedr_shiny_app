@@ -31,7 +31,7 @@ equiv_bf <- function(x = NULL,
         sd_pooled <- se / sqrt(1 / n_x + 1 / n_y)
     }
     t_stat <- (mean_y - mean_x) / se
-    if (interval_std == 0) {
+    if (interval_std == "unstd") {
         interval_low_std <- interval_low / sd_pooled
         interval_high_std <- interval_high / sd_pooled
         interval_low_unstd <- interval_low
