@@ -34,7 +34,7 @@ infer_bf <- function(x = NULL,
     }
     if (str_detect(direction,
                    "low")) {
-        if (ni_margin_std == 0) {
+        if (ni_margin_std == "unstd") {
             ni_margin_std <- ni_margin / sd_pooled
             ni_margin_unstd <- ni_margin
         } else {
@@ -53,7 +53,7 @@ infer_bf <- function(x = NULL,
         h0 <- "mu_y - mu_x > ni_margin"
         h1 <- "mu_y - mu_x < ni_margin"
     } else {
-        if (ni_margin_std == 0) {
+        if (ni_margin_std == "unstd") {
             ni_margin_std <- -ni_margin / sd_pooled
             ni_margin_unstd <- -ni_margin
         } else {
