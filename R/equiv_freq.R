@@ -8,6 +8,7 @@ equiv_freq <- function(x = NULL,
                        sd_y = NULL,
                        ci_margin = NULL,
                        ci_level = NULL,
+                       choose_sd_ci = NULL,
                        interval_low,
                        interval_high,
                        interval_std) {
@@ -19,15 +20,16 @@ equiv_freq <- function(x = NULL,
         sd_x <- sd(x)
         sd_y <- sd(y)
     }
-        df <- n_x + n_y - 2
-    if (!is.null(sd_x) && !is.null(sd_y)) {
-        sd_pooled <- sqrt(((n_x - 1) * sd_x ^ 2 + (n_y - 1) * sd_y ^ 2) /
-                              df)
+    df <- n_x + n_y - 2
+    if (choose_sd_ci == "sd") {
+        sd_pooled <- sqrt(((n_x - 1) * sd_x ^ 2 + (n_y - 1) * sd_y ^ 2) / df)
         se <- sd_pooled * sqrt(1 / n_x + 1 / n_y)
-    } else {
+    }
+    if (choose_sd_ci == "ci") {
         perc <- 1 - ((1 - ci_level) / 2)
         se <- ci_margin / qt(p = perc,
                              df = df)
+        sd_pooled <- se / sqrt(1 / n_x + 1 / n_y)
     }
     if (interval_std == "unstd") {
         interval_low_std <- interval_low / sd_pooled

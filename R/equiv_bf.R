@@ -8,6 +8,7 @@ equiv_bf <- function(x = NULL,
                      sd_y = NULL,
                      ci_margin = NULL,
                      ci_level = NULL,
+                     choose_sd_ci = NULL,
                      interval_low,
                      interval_high,
                      interval_std,
@@ -20,16 +21,28 @@ equiv_bf <- function(x = NULL,
         sd_x <- sd(x)
         sd_y <- sd(y)
     }
-    if (!is.null(sd_x) && !is.null(sd_y)) {
+    if (choose_sd_ci == "sd") {
         sd_pooled <- sqrt(((n_x - 1) * sd_x ^ 2 + (n_y - 1) * sd_y ^ 2) /
                               (n_x + n_y - 2))
         se <- sd_pooled * sqrt(1 / n_x + 1 / n_y)
-    } else {
+    }
+    if (choose_sd_ci == "ci") {
         perc <- 1 - ((1 - ci_level) / 2)
         se <- ci_margin / qt(p = perc,
                              df = n_x + n_y - 2)
         sd_pooled <- se / sqrt(1 / n_x + 1 / n_y)
     }
+    # if (!is.na(sd_x) && !is.na(sd_y)) {
+    #     sd_pooled <- sqrt(((n_x - 1) * sd_x ^ 2 + (n_y - 1) * sd_y ^ 2) /
+    #                           (n_x + n_y - 2))
+    #     se <- sd_pooled * sqrt(1 / n_x + 1 / n_y)
+    # }
+    # if (!is.na(ci_margin) && !is.na(ci_level)) {
+    #     perc <- 1 - ((1 - ci_level) / 2)
+    #     se <- ci_margin / qt(p = perc,
+    #                          df = n_x + n_y - 2)
+    #     sd_pooled <- se / sqrt(1 / n_x + 1 / n_y)
+    # }
     t_stat <- (mean_y - mean_x) / se
     if (interval_std == "unstd") {
         interval_low_std <- interval_low / sd_pooled

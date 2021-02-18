@@ -8,6 +8,7 @@ super_bf <- function(x = NULL,
                      sd_y = NULL,
                      ci_margin = NULL,
                      ci_level = NULL,
+                     choose_sd_ci = NULL,
                      prior_scale,
                      direction) {
     
@@ -19,14 +20,16 @@ super_bf <- function(x = NULL,
         sd_x <- sd(x)
         sd_y <- sd(y)
     }
-    if (!is.null(sd_x) && !is.null(sd_y)) {
+    if (choose_sd_ci == "sd") {
         sd_pooled <- sqrt(((n_x - 1) * sd_x ^ 2 + (n_y - 1) * sd_y ^ 2) /
                               (n_x + n_y - 2))
         se <- sd_pooled * sqrt(1 / n_x + 1 / n_y)
-    } else {
+    }
+    if (choose_sd_ci == "ci") {
         perc <- 1 - ((1 - ci_level) / 2)
         se <- ci_margin / qt(p = perc,
                              df = n_x + n_y - 2)
+        sd_pooled <- se / sqrt(1 / n_x + 1 / n_y)
     }
     t_stat <- (mean_y - mean_x) / se
     res <- bf10_t(t = t_stat,
