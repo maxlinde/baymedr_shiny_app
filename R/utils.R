@@ -31,14 +31,14 @@ general_ui <- function(id) {
             inputId = id,
             label = "Sample size of the control condition",
             value = NULL,
-            min = 0
+            min = 1
         ),
         # n_y
         n_y = numericInput(
             inputId = id,
             label = "Sample size of the experimental condition",
             value = NULL,
-            min = 0
+            min = 1
         ),
         # mean_x
         mean_x = numericInput(
@@ -156,7 +156,8 @@ infer_ui <- function(id) {
         ni_margin = numericInput(
             inputId = id,
             label = "Non-inferiority margin",
-            value = NULL
+            value = NULL,
+            min = 0
         ) %>%
             helper(
                 icon = "question-circle",
