@@ -15,11 +15,13 @@ library("rmarkdown")
 library("shinyhelper")
 library("shinyjs")
 library("Rcpp")
+library("shinyFeedback")
 
 sapply(paste0("src/", list.files(path = "src/")), sourceCpp)
 
 # user interface
 ui <- fluidPage(
+    useShinyFeedback(),
     # theme
     theme = shinytheme(
         theme = "cosmo"
