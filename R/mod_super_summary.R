@@ -105,6 +105,7 @@ superSummaryServer <- function(id) {
                         sd_y = input$sd_y,
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
+                        choose_sd_ci = input$choose_sd_ci,
                         prior_scale = input$prior_scale,
                         direction = input$direction
                     )
@@ -125,6 +126,7 @@ superSummaryServer <- function(id) {
                         sd_y = input$sd_y,
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
+                        choose_sd_ci = input$choose_sd_ci,
                         direction = input$direction
                     )
                 }

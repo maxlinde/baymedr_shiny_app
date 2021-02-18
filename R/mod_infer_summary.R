@@ -107,6 +107,7 @@ inferSummaryServer <- function(id) {
                         sd_y = input$sd_y,
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
+                        choose_sd_ci = input$choose_sd_ci,
                         ni_margin = input$ni_margin,
                         ni_margin_std = input$ni_margin_std,
                         prior_scale = input$prior_scale,
@@ -129,6 +130,7 @@ inferSummaryServer <- function(id) {
                         sd_y = input$sd_y,
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
+                        choose_sd_ci = input$choose_sd_ci,
                         ni_margin = input$ni_margin,
                         ni_margin_std = input$ni_margin_std,
                         direction = input$direction

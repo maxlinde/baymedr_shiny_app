@@ -107,6 +107,7 @@ equivSummaryServer <- function(id) {
                         sd_y = input$sd_y,
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
+                        choose_sd_ci = input$choose_sd_ci,
                         interval_low = input$interval_low,
                         interval_high = input$interval_high,
                         interval_std = input$interval_std,
@@ -129,6 +130,7 @@ equivSummaryServer <- function(id) {
                         sd_y = input$sd_y,
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level,
+                        choose_sd_ci = input$choose_sd_ci,
                         interval_low = input$interval_low,
                         interval_high = input$interval_high,
                         interval_std = input$interval_std
