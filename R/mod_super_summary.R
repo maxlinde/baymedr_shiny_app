@@ -95,6 +95,16 @@ superSummaryServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    feedback <- feedback(
+                        id = id,
+                        n_x = input$n_x,
+                        n_y = input$n_y,
+                        sd_x = input$sd_x,
+                        sd_y = input$sd_y,
+                        ci_margin = input$ci_margin,
+                        ci_level = input$ci_level
+                    )
+                    req(feedback)
                     results_calculate(
                         id = id,
                         n_x = input$n_x,
@@ -116,6 +126,16 @@ superSummaryServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    feedback <- feedback(
+                        id = id,
+                        n_x = input$n_x,
+                        n_y = input$n_y,
+                        sd_x = input$sd_x,
+                        sd_y = input$sd_y,
+                        ci_margin = input$ci_margin,
+                        ci_level = input$ci_level
+                    )
+                    req(feedback)
                     results_calculate_freq(
                         id = id,
                         n_x = input$n_x,
