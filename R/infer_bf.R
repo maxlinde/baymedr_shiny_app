@@ -20,6 +20,7 @@ infer_bf <- function(x = NULL,
         mean_y <- mean(y)
         sd_x <- sd(x)
         sd_y <- sd(y)
+        choose_sd_ci <- "sd"
     }
     if (choose_sd_ci == "sd") {
         sd_pooled <- sqrt(((n_x - 1) * sd_x ^ 2 + (n_y - 1) * sd_y ^ 2) /
