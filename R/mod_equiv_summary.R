@@ -107,6 +107,14 @@ equivSummaryServer <- function(id) {
                         ci_level = input$ci_level
                     )
                     req(feedback)
+                    validate(need(
+                        input$interval_low <= input$interval_high,
+                        str_c(
+                            "The lower boundary of the equivalence interval ",
+                            "must not be higher than the upper boundary of ",
+                            "the equivalence interval."
+                        )
+                    ))
                     results_calculate(
                         id = id,
                         n_x = input$n_x,

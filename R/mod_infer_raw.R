@@ -102,6 +102,13 @@ inferRawServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    ni_margin_feed <- input$ni_margin >= 0
+                    feedbackWarning(
+                        inputId = "ni_margin",
+                        show = !ni_margin_feed,
+                        text = "The non-inferiority margin must not be lower than 0."
+                    )
+                    req(ni_margin_feed)
                     results_calculate(
                         id = id,
                         x = dat$data()[[dat$control()]],
@@ -118,6 +125,13 @@ inferRawServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    ni_margin_feed <- input$ni_margin >= 0
+                    feedbackWarning(
+                        inputId = "ni_margin",
+                        show = !ni_margin_feed,
+                        text = "The non-inferiority margin must not be lower than 0."
+                    )
+                    req(ni_margin_feed)
                     results_calculate_freq(
                         id = id,
                         x = dat$data()[[dat$control()]],

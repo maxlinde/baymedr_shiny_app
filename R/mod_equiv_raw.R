@@ -102,6 +102,14 @@ equivRawServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    validate(need(
+                        input$interval_low <= input$interval_high,
+                        str_c(
+                            "The lower boundary of the equivalence interval ",
+                            "must not be higher than the upper boundary of ",
+                            "the equivalence interval."
+                        )
+                    ))
                     results_calculate(
                         id = id,
                         x = dat$data()[[dat$control()]],

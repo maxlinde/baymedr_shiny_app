@@ -106,7 +106,14 @@ inferSummaryServer <- function(id) {
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level
                     )
+                    ni_margin_feed <- input$ni_margin >= 0
+                    feedbackWarning(
+                        inputId = "ni_margin",
+                        show = !ni_margin_feed,
+                        text = "The non-inferiority margin must not be lower than 0."
+                    )
                     req(feedback)
+                    req(ni_margin_feed)
                     results_calculate(
                         id = id,
                         n_x = input$n_x,
@@ -139,7 +146,14 @@ inferSummaryServer <- function(id) {
                         ci_margin = input$ci_margin,
                         ci_level = input$ci_level
                     )
+                    ni_margin_feed <- input$ni_margin >= 0
+                    feedbackWarning(
+                        inputId = "ni_margin",
+                        show = !ni_margin_feed,
+                        text = "The non-inferiority margin must not be lower than 0."
+                    )
                     req(feedback)
+                    req(ni_margin_feed)
                     results_calculate_freq(
                         id = id,
                         n_x = input$n_x,
