@@ -109,6 +109,10 @@ inferRawServer <- function(id) {
                         text = "The non-inferiority margin must not be lower than 0."
                     )
                     req(ni_margin_feed)
+                    validate(need(
+                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
+                        "Data must be numeric."
+                    ))
                     results_calculate(
                         id = id,
                         x = dat$data()[[dat$control()]],
@@ -132,6 +136,10 @@ inferRawServer <- function(id) {
                         text = "The non-inferiority margin must not be lower than 0."
                     )
                     req(ni_margin_feed)
+                    validate(need(
+                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
+                        "Data must be numeric."
+                    ))
                     results_calculate_freq(
                         id = id,
                         x = dat$data()[[dat$control()]],

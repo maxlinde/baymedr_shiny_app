@@ -100,6 +100,10 @@ superRawServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    validate(need(
+                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
+                        "Data must be numeric."
+                    ))
                     results_calculate(
                         id = id,
                         x = dat$data()[[dat$control()]],
@@ -114,6 +118,10 @@ superRawServer <- function(id) {
                     input$submit
                 },
                 valueExpr = {
+                    validate(need(
+                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
+                        "Data must be numeric."
+                    ))
                     results_calculate_freq(
                         id = id,
                         x = dat$data()[[dat$control()]],
