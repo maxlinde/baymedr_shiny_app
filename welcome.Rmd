@@ -15,7 +15,7 @@ csl:
 
 # Bayes Factors for Superiority, Non-inferiority, and Equivalence Designs
 
-Welcome! This website allows you to easily calculate Bayes factors for superiority, non-inferiority, and equivalence designs. This website was built using Shiny [@ChangChengAllaire_2020_1.5.0] and implements the baymedr software [@LindeVanravenzwaaij2019_0.1.0], written in R [@Rcoreteam2019], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible to every researcher. A tutorial manuscript on how to use the baymedr R package is provided elsewhere [see @LindeVanravenzwaaij2019preprint].
+Welcome! This website allows you to easily calculate Bayes factors for superiority, non-inferiority, and equivalence designs. This website was built using Shiny [@ChangChengAllaire_2020_1.5.0] and implements the baymedr software [@LindeVanravenzwaaij2021_0.1.1], written in R [@Rcoreteam2019], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible to every researcher. A tutorial manuscript on how to use the baymedr R package is provided elsewhere [see @LindeVanravenzwaaij2019preprint].
 
 # Bayes Factors
 
@@ -106,10 +106,13 @@ $$
   <a href="https://orcid.org/0000-0001-8421-090X">
     <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
   </a>
+  <a href="https://maxlinde.github.io">
+    <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
+  </a>
 </div>
 <div class="column-right">
   <img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;">
-  <p>Don van Ravenzwaaij is associate professor at the University of Groningen</p>
+  <p>Don van Ravenzwaaij is professor at the University of Groningen</p>
   <a href="https://twitter.com/donvanraven">
     <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
   </a>
@@ -124,7 +127,7 @@ $$
 
 # Contact and Source Code
 
-The source code for this Shiny app can be found on [GitHub](https://github.com/maxlinde/baymedr_shiny_app). The underlying baymedr R package [@LindeVanravenzwaaij2019_0.1.0] is available on [CRAN](https://CRAN.R-project.org/package=baymedr) and the source code of the most recent version is available on [GitHub](https://github.com/maxlinde/baymedr).
+The source code for this Shiny app can be found on [GitHub](https://github.com/maxlinde/baymedr_shiny_app). The underlying baymedr R package [@LindeVanravenzwaaij2021_0.1.1] is available on [CRAN](https://CRAN.R-project.org/package=baymedr) and the source code of the most recent version is available on [GitHub](https://github.com/maxlinde/baymedr).
 
 Questions, bug reports, and suggestions for improvement are welcomed and appreciated. Please contact Max via email (<m.linde@rug.nl>) or use the corresponding functionalities on [GitHub](https://github.com/maxlinde/baymedr_shiny_app).
 
