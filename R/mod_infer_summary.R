@@ -87,6 +87,18 @@ inferSummaryServer <- function(id) {
         module = function(input, output, session) {
             output$prior_scale_plot <- renderPlot(
                 expr = {
+                    prior_scale <- eval(
+                        parse(
+                            text = input$prior_scale
+                        )
+                    )
+                    validate(need(
+                        is.numeric(prior_scale) & prior_scale > 0,
+                        str_c(
+                            "The prior scale must evaluate to a positive ",
+                            "numeric value."
+                        )
+                    ))
                     prior_scale_plot(
                         prior_scale = input$prior_scale
                     )
