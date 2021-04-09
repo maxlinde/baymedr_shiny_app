@@ -56,27 +56,3 @@ feedback <- function(id,
     }
     all(unlist(tests))
 }
-
-# feed <- function(id, ...) {
-#     name <- str_sub(
-#         string = id,
-#         start = 1,
-#         end = 5
-#     )
-#     arguments <- list(...)
-#     switch(
-#         name,
-#         equiv = do.call(
-#             what = equiv_feed,
-#             args = arguments
-#         ),
-#         infer = do.call(
-#             what = infer_feed,
-#             args = arguments
-#         ),
-#         super = do.call(
-#             what = super_feed,
-#             args = arguments
-#         )
-#     )
-# }
