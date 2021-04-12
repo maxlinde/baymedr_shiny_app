@@ -7,16 +7,31 @@ infer_form <- function(n_x = n_x,
                        prior_scale = prior_scale,
                        bf = bf,
                        direction = direction) {
+    colours <- viridis(
+        n = 4
+    )
     if (direction == "low") {
         withMathJax(
             helpText(
-                "$$\\Large\\text{BF}_{-+}=\\dfrac{\\text{BF}_{-0}}{\\text{BF}_{+0}}=\\dfrac{\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}}{\\dfrac{\\color{#377EB8}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{#984EA3}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}}$$"
+                sprintf(
+                    "$$\\Large\\text{BF}_{-+}=\\dfrac{\\text{BF}_{-0}}{\\text{BF}_{+0}}=\\dfrac{\\dfrac{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}}{\\dfrac{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}}$$",
+                    colours[1],
+                    colours[3],
+                    colours[2],
+                    colours[4]
+                )
             )
         )
     } else {
         withMathJax(
             helpText(
-                "$$\\Large\\text{BF}_{+-}=\\dfrac{\\text{BF}_{+0}}{\\text{BF}_{-0}}=\\dfrac{\\dfrac{\\color{#377EB8}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{#984EA3}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}}{\\dfrac{\\color{#E41A1C}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{#4DAF4A}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}}$$"
+                sprintf(
+                    "$$\\Large\\text{BF}_{+-}=\\dfrac{\\text{BF}_{+0}}{\\text{BF}_{-0}}=\\dfrac{\\dfrac{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_+\\right)}}{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_+\\right)}}}{\\dfrac{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid\\mathcal{H}_-\\right)}}{\\color{%s}{\\text{p}\\left(\\delta=\\delta_0\\mid D\\text{,}~\\mathcal{H}_-\\right)}}}$$",
+                    colours[2],
+                    colours[4],
+                    colours[1],
+                    colours[3]
+                )
             )
         )
     }
