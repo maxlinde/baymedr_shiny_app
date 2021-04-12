@@ -8,9 +8,8 @@ infer_plot <- function(n_x = n_x,
                        bf = bf,
                        bf_all = bf_all,
                        direction = direction) {
-    colours <- brewer.pal(
-        n = 4,
-        name = "Set1"
+    colours <- viridis(
+        n = 4
     )
     hdi80_prior_low <- qcauchy(
         p = 0.1,

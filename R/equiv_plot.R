@@ -6,9 +6,8 @@ equiv_plot <- function(n_x = n_x,
                        interval = interval,
                        prior_scale = prior_scale,
                        bf = bf) {
-    colours <- brewer.pal(
-        n = 4,
-        name = "Set1"
+    colours <- viridis(
+        n = 4
     )
     hdi80_prior_low <- qcauchy(
         p = 0.1,
