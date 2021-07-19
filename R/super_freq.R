@@ -17,6 +17,7 @@ super_freq <- function(x = NULL,
         mean_y <- mean(y)
         sd_x <- sd(x)
         sd_y <- sd(y)
+        choose_sd_ci <- "sd"
     }
     df <- n_x + n_y - 2
     if (choose_sd_ci == "sd") {
