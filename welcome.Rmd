@@ -30,19 +30,19 @@ The superiority test quantifies evidence of whether the experimental group is su
 For a two-sided test, the null and alternative hypotheses are:
 $$
 \begin{align}
-    \mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta \neq 0
+\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta \neq 0
 \end{align}
 $$
 For a one-sided test, where low values represent superiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-    \mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta < 0 
+\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta < 0 
 \end{align}
 $$
 For a one-sided test, where high values represent superiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-    \mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta > 0 
+\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta > 0 
 \end{align}
 $$
 
@@ -53,13 +53,13 @@ The non-inferiority test quantifies evidence of whether the experimental conditi
 When low values represent non-inferiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-    \mathcal{H}_0 \mathpunct{:} ~ \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta < m 
+\mathcal{H}_0 \mathpunct{:} ~ \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta < m 
 \end{align}
 $$
 When high values represent non-inferiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-    \mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m && \mathcal{H}_1 \mathpunct{:} ~ \delta > -m 
+\mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m && \mathcal{H}_1 \mathpunct{:} ~ \delta > -m 
 \end{align}
 $$
 
@@ -70,58 +70,109 @@ The equivalence test quantifies evidence of whether the experimental and control
 The null and alternative hypotheses are:
 $$
 \begin{align}
-    \mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m ~ \text{OR} ~  \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta > - m ~ \text{AND} ~ \delta < m 
+\mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m ~ \text{OR} ~  \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta > - m ~ \text{AND} ~ \delta < m 
 \end{align}
 $$
 
 # About Us
 
 ```{=html}
+<!-- <style> -->
+<!-- .column-left{ -->
+<!-- float: left; -->
+<!-- width: 50%; -->
+<!-- text-align: center; -->
+<!-- border-right: 1px solid black; -->
+<!-- margin-bottom: 30px -->
+<!-- } -->
+<!-- .column-right{ -->
+<!-- float: right; -->
+<!-- width: 50%; -->
+<!-- text-align: center; -->
+<!-- border-left: 1px solid black; -->
+<!-- margin-bottom: 30px -->
+<!-- } -->
+<!-- </style> -->
+
+<!-- <div class="container-fluid"> -->
+<!-- <div class="column-left"> -->
+<!-- <img src="img/mlinde.jpeg" alt="Maximilian Linde" width="150" style="border-radius: 50%;"> -->
+<!-- <p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p> -->
+<!-- <a href="https://github.com/maxlinde"> -->
+<!-- <img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- <a href="https://twitter.com/maxlinde_"> -->
+<!-- <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- <a href="https://orcid.org/0000-0001-8421-090X"> -->
+<!-- <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- <a href="https://maxlinde.github.io"> -->
+<!-- <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- <div class="column-right"> -->
+<!-- <img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;"> -->
+<!-- <p>Don van Ravenzwaaij is professor at the University of Groningen</p> -->
+<!-- <a href="https://twitter.com/donvanraven"> -->
+<!-- <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- <a href="https://orcid.org/0000-0002-5030-4091"> -->
+<!-- <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- <a href="https://www.donvanravenzwaaij.com"> -->
+<!-- <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;"> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
+
+
+
 <style>
-.column-left{
-  float: left;
-  width: 50%;
-  text-align: center;
-  border-right: 1px solid black;
-  margin-bottom: 30px
+.col-container {
+display: table; /* Make the container element behave like a table */
+width: 100%; /* Set full-width to expand the whole page */
 }
-.column-right{
-  float: right;
-  width: 50%;
-  text-align: center;
-  border-left: 1px solid black;
-  margin-bottom: 30px
+
+.col {
+display: table-cell; /* Make elements inside the container behave like table cells */
+text-align: center;
+width: 50%;
 }
 </style>
 
-<div class="column-left">
-  <img src="img/mlinde.jpeg" alt="Maximilian Linde" width="150" style="border-radius: 50%;">
-  <p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p>
-  <a href="https://github.com/maxlinde">
-    <img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;">
-  </a>
-  <a href="https://twitter.com/maxlinde_">
-    <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
-  </a>
-  <a href="https://orcid.org/0000-0001-8421-090X">
-    <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
-  </a>
-  <a href="https://maxlinde.github.io">
-    <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
-  </a>
+<div class="col-container">
+<div class="col">
+<img src="img/mlinde.jpeg" alt="Maximilian Linde" width="150" style="border-radius: 50%;">
+<p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p>
+<a href="https://github.com/maxlinde">
+<img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;">
+</a>
+<a href="https://twitter.com/maxlinde_">
+<img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
+</a>
+<a href="https://orcid.org/0000-0001-8421-090X">
+<img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
+</a>
+<a href="https://maxlinde.github.io">
+<img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
+</a>
 </div>
-<div class="column-right">
-  <img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;">
-  <p>Don van Ravenzwaaij is professor at the University of Groningen</p>
-  <a href="https://twitter.com/donvanraven">
-    <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
-  </a>
-  <a href="https://orcid.org/0000-0002-5030-4091">
-    <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
-  </a>
-  <a href="https://www.donvanravenzwaaij.com">
-    <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
-  </a>
+
+<div class="col">
+<img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;">
+<p>Don van Ravenzwaaij is professor at the University of Groningen</p>
+<a href="https://twitter.com/donvanraven">
+<img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;">
+</a>
+<a href="https://orcid.org/0000-0002-5030-4091">
+<img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;">
+</a>
+<a href="https://www.donvanravenzwaaij.com">
+<img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;">
+</a>
+</div>
+
 </div>
 ```
 
