@@ -22,11 +22,13 @@ sapply(paste0("src/", list.files(path = "src/")), sourceCpp)
 # user interface
 ui <- fluidPage(
     tags$head(
-        tags$style(HTML("
+        tags$style(HTML(
+        "
         .shiny-output-error-validation {
-        color: red;
-      }
-    "))
+            color: red;
+         }
+        "
+        ))
     ),
     useShinyFeedback(),
     # theme
