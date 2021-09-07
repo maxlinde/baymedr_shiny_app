@@ -234,6 +234,9 @@ results_ui <- function(id) {
         # results_form
         results_form = uiOutput(
             outputId = id
+        ),
+        results_explain = textOutput(
+            outputId = id
         )
     )
 }
