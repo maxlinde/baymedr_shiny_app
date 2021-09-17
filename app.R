@@ -16,6 +16,7 @@ library("shinyhelper")
 library("shinyjs")
 library("Rcpp")
 library("shinyFeedback")
+library("baymedr")
 
 sapply(paste0("src/", list.files(path = "src/")), sourceCpp)
 
