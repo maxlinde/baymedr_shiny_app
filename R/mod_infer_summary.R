@@ -74,6 +74,7 @@ inferSummaryUi <- function(id) {
             ),
             column(
                 width = 6,
+                results_ui(ns("results_explain")),
                 results_ui(ns("results_plot"))
             )
         )
@@ -298,6 +299,22 @@ inferSummaryServer <- function(id) {
                     plot()
                 },
                 height = 700
+            )
+            explain <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_explain(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_explain <- renderText(
+                expr = {
+                    explain()
+                }
             )
         }
     )

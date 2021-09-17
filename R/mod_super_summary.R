@@ -72,6 +72,7 @@ superSummaryUi <- function(id) {
             ),
             column(
                 width = 6,
+                results_ui(ns("results_explain")),
                 results_ui(ns("results_plot"))
             )
         )
@@ -278,6 +279,22 @@ superSummaryServer <- function(id) {
                     plot()
                 },
                 height = 350
+            )
+            explain <- eventReactive(
+                eventExpr = {
+                    input$submit
+                },
+                valueExpr = {
+                    results_explain(
+                        id = id,
+                        results()
+                    )
+                }
+            )
+            output$results_explain <- renderText(
+                expr = {
+                    explain()
+                }
             )
         }
     )
