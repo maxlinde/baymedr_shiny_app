@@ -25,24 +25,18 @@ This is not the right place for an in-depth treatment of Bayes factors. However,
 
 # Superiority
 
-The superiority test quantifies evidence of whether the experimental group is superior to the control group. Importantly, sometimes low and sometimes high values on the measure of interest represent superiority. By its very nature, the superiority test consists of a one-sided test. Oftentimes, however, the superiority test is conducted as a two-sided test with subsequent confirmation that the effect goes in the expected direction.
+The superiority test quantifies evidence of whether the experimental group is superior to the control group. Importantly, sometimes low and sometimes high values on the measure of interest represent superiority. By its very nature, the superiority test consists of a one-sided test.
 
-For a two-sided test, the null and alternative hypotheses are:
+For a superiority test, where low values represent superiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta \neq 0
+\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_- \mathpunct{:} ~ \delta < 0 
 \end{align}
 $$
-For a one-sided test, where low values represent superiority, the null and alternative hypotheses are:
+For a superiority test, where high values represent superiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta < 0 
-\end{align}
-$$
-For a one-sided test, where high values represent superiority, the null and alternative hypotheses are:
-$$
-\begin{align}
-\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_1 \mathpunct{:} ~ \delta > 0 
+\mathcal{H}_0 \mathpunct{:} ~ \delta = 0 && \mathcal{H}_+ \mathpunct{:} ~ \delta > 0 
 \end{align}
 $$
 
@@ -53,13 +47,13 @@ The non-inferiority test quantifies evidence of whether the experimental conditi
 When low values represent non-inferiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-\mathcal{H}_0 \mathpunct{:} ~ \delta \geq m && \mathcal{H}_1 \mathpunct{:} ~ \delta < m 
+\mathcal{H}_+ \mathpunct{:} ~ \delta \geq m && \mathcal{H}_- \mathpunct{:} ~ \delta < m 
 \end{align}
 $$
 When high values represent non-inferiority, the null and alternative hypotheses are:
 $$
 \begin{align}
-\mathcal{H}_0 \mathpunct{:} ~ \delta \leq -m && \mathcal{H}_1 \mathpunct{:} ~ \delta > -m 
+\mathcal{H}_- \mathpunct{:} ~ \delta \leq -m && \mathcal{H}_+ \mathpunct{:} ~ \delta > -m 
 \end{align}
 $$
 
@@ -77,65 +71,14 @@ $$
 # About Us
 
 ```{=html}
-<!-- <style> -->
-<!-- .column-left{ -->
-<!-- float: left; -->
-<!-- width: 50%; -->
-<!-- text-align: center; -->
-<!-- border-right: 1px solid black; -->
-<!-- margin-bottom: 30px -->
-<!-- } -->
-<!-- .column-right{ -->
-<!-- float: right; -->
-<!-- width: 50%; -->
-<!-- text-align: center; -->
-<!-- border-left: 1px solid black; -->
-<!-- margin-bottom: 30px -->
-<!-- } -->
-<!-- </style> -->
-
-<!-- <div class="container-fluid"> -->
-<!-- <div class="column-left"> -->
-<!-- <img src="img/mlinde.jpeg" alt="Maximilian Linde" width="150" style="border-radius: 50%;"> -->
-<!-- <p>Maximilian Linde is PhD student in the lab of Don van Ravenzwaaij at the University of Groningen</p> -->
-<!-- <a href="https://github.com/maxlinde"> -->
-<!-- <img border="0" alt="GitHub" src="img/github.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- <a href="https://twitter.com/maxlinde_"> -->
-<!-- <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- <a href="https://orcid.org/0000-0001-8421-090X"> -->
-<!-- <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- <a href="https://maxlinde.github.io"> -->
-<!-- <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- </div> -->
-<!-- <div class="column-right"> -->
-<!-- <img src="img/dvanravenzwaaij.jpeg" alt="Don van Ravenzwaaij" width="150" style="border-radius: 50%;"> -->
-<!-- <p>Don van Ravenzwaaij is professor at the University of Groningen</p> -->
-<!-- <a href="https://twitter.com/donvanraven"> -->
-<!-- <img border="0" alt="Twitter" src="img/twitter.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- <a href="https://orcid.org/0000-0002-5030-4091"> -->
-<!-- <img border="0" alt="Orcid" src="img/orcid.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- <a href="https://www.donvanravenzwaaij.com"> -->
-<!-- <img border="0" alt="Personal" src="img/personal.png" width="30" style="border-radius: 50%;"> -->
-<!-- </a> -->
-<!-- </div> -->
-<!-- </div> -->
-
-
-
 <style>
 .col-container {
-display: table; /* Make the container element behave like a table */
-width: 100%; /* Set full-width to expand the whole page */
+display: table;
+width: 100%;
 }
 
 .col {
-display: table-cell; /* Make elements inside the container behave like table cells */
+display: table-cell;
 text-align: center;
 width: 50%;
 }
@@ -181,5 +124,23 @@ width: 50%;
 The source code for this Shiny app can be found on [GitHub](https://github.com/maxlinde/baymedr_shiny_app). The underlying baymedr R package [@LindeVanravenzwaaij2021_0.1.1] is available on [CRAN](https://CRAN.R-project.org/package=baymedr) and the source code of the most recent version is available on [GitHub](https://github.com/maxlinde/baymedr).
 
 Questions, bug reports, and suggestions for improvement are welcomed and appreciated. Please contact Max via email (<m.linde@rug.nl>) or use the corresponding functionalities on [GitHub](https://github.com/maxlinde/baymedr_shiny_app).
+
+# How to Cite?
+
+To cite this website, use:
+
+Linde, M. & van Ravenzwaaij, D. (2021). baymedr: Computation of Bayes factors for common biomedical designs. R package version 0.1.1. Retrieved from https://CRAN.R-project.org/package=baymedr
+
+The BibTeX entry is:
+
+```{r, eval=FALSE}
+@Manual{LindeVanravenzwaaij2021,
+    title  = {baymedr: Computation of Bayes Factors for Common Biomedical Designs},
+    author = {Linde, Maximilian and {van Ravenzwaaij}, Don},
+    year   = {2021},
+    note   = {R package version 0.1.1},
+    url    = {https://CRAN.R-project.org/package=baymedr},
+}
+```
 
 # References
