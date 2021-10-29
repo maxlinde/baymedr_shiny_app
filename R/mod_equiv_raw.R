@@ -116,8 +116,8 @@ equivRawServer <- function(id) {
                 },
                 valueExpr = {
                     validate(need(
-                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
-                        "Data must be numeric."
+                        is.numeric(dat$control()) & is.numeric(dat$experimental()),
+                        "Data for the dependent variable must be numeric."
                     ))
                     validate(need(
                         input$interval_low <= input$interval_high,
@@ -129,8 +129,8 @@ equivRawServer <- function(id) {
                     ))
                     results_calculate(
                         id = id,
-                        x = dat$data()[[dat$control()]],
-                        y = dat$data()[[dat$experimental()]],
+                        x = dat$control(),
+                        y = dat$experimental(),
                         interval_low = input$interval_low,
                         interval_high = input$interval_high,
                         interval_std = input$interval_std,
@@ -144,8 +144,8 @@ equivRawServer <- function(id) {
                 },
                 valueExpr = {
                     validate(need(
-                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
-                        "Data must be numeric."
+                        is.numeric(dat$control()) & is.numeric(dat$experimental()),
+                        "Data for the dependent variable must be numeric."
                     ))
                     validate(need(
                         input$interval_low <= input$interval_high,
@@ -157,8 +157,8 @@ equivRawServer <- function(id) {
                     ))
                     results_calculate_freq(
                         id = id,
-                        x = dat$data()[[dat$control()]],
-                        y = dat$data()[[dat$experimental()]],
+                        x = dat$control(),
+                        y = dat$experimental(),
                         interval_low = input$interval_low,
                         interval_high = input$interval_high,
                         interval_std = input$interval_std

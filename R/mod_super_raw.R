@@ -114,13 +114,13 @@ superRawServer <- function(id) {
                 },
                 valueExpr = {
                     validate(need(
-                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
-                        "Data must be numeric."
+                        is.numeric(dat$control()) & is.numeric(dat$experimental()),
+                        "Data for the dependent variable must be numeric."
                     ))
                     results_calculate(
                         id = id,
-                        x = dat$data()[[dat$control()]],
-                        y = dat$data()[[dat$experimental()]],
+                        x = dat$control(),
+                        y = dat$experimental(),
                         prior_scale = input$prior_scale,
                         direction = input$direction
                     )
@@ -132,13 +132,13 @@ superRawServer <- function(id) {
                 },
                 valueExpr = {
                     validate(need(
-                        is.numeric(dat$data()[[dat$control()]]) & is.numeric(dat$data()[[dat$experimental()]]),
-                        "Data must be numeric."
+                        is.numeric(dat$control()) & is.numeric(dat$experimental()),
+                        "Data for the dependent variable must be numeric."
                     ))
                     results_calculate_freq(
                         id = id,
-                        x = dat$data()[[dat$control()]],
-                        y = dat$data()[[dat$experimental()]],
+                        x = dat$control(),
+                        y = dat$experimental(),
                         direction = input$direction
                     )
                 }
