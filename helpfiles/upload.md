@@ -1,1 +1,1 @@
-Data have to be in wide format, where each column represents the data for one condition. The format of the uploaded data file is guessed. If this does not work, try to use a common file type (e.g., csv, tsv, etc.).
+The dataset has to be in long format, where one column provides the data for the dependent variable and a different column provides the data for the independent (grouping) variable. The format of the uploaded data file is guessed. If this does not work, try to use a common file type (e.g., csv, tsv, etc.).
