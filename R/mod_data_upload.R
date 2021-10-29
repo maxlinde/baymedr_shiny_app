@@ -17,13 +17,23 @@ dataUploadUi <- function(id) {
                         content = "upload"
                     ),
                 selectInput(
+                    inputId = ns("name_dv"),
+                    label = "Column name for the dependent variable",
+                    choices = NULL
+                ),
+                selectInput(
+                    inputId = ns("name_iv"),
+                    label = "Column name for the independent (grouping) variable",
+                    choices = NULL
+                ),
+                selectInput(
                     inputId = ns("name_control"),
-                    label = "Column name of the control condition",
+                    label = "Name of the control group",
                     choices = NULL
                 ),
                 selectInput(
                     inputId = ns("name_experimental"),
-                    label = "Column name of the experimental condition",
+                    label = "Name of the experimental group",
                     choices = NULL
                 )
             ),
@@ -56,14 +66,33 @@ dataUploadServer <- function(id) {
                 handlerExpr = {
                     updateSelectInput(
                         session = session,
-                        inputId = "name_control",
+                        inputId = "name_dv",
                         choices = names(data()),
                         selected = ""
                     )
                     updateSelectInput(
                         session = session,
-                        inputId = "name_experimental",
+                        inputId = "name_iv",
                         choices = names(data()),
+                        selected = ""
+                    )
+                }
+            )
+            observeEvent(
+                eventExpr = {
+                    input$name_iv
+                },
+                handlerExpr = {
+                    updateSelectInput(
+                        session = session,
+                        inputId = "name_control",
+                        choices = unique(data()[[input$name_iv]]),
+                        selected = ""
+                    )
+                    updateSelectInput(
+                        session = session,
+                        inputId = "name_experimental",
+                        choices = unique(data()[[input$name_iv]]),
                         selected = ""
                     )
                 }
@@ -75,15 +104,14 @@ dataUploadServer <- function(id) {
             }
             return(
                 list(
-                    data = data,
                     control = reactive(
                         x = {
-                            input$name_control
+                            data()[data()[input$name_iv] == input$name_control, ][[input$name_dv]]
                         }
                     ),
                     experimental = reactive(
                         x = {
-                            input$name_experimental
+                            data()[data()[input$name_iv] == input$name_experimental, ][[input$name_dv]]
                         }
                     )
                 )
