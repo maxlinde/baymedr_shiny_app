@@ -120,6 +120,14 @@ equivRawServer <- function(id) {
                         "Data for the dependent variable must be numeric."
                     ))
                     validate(need(
+                        all(!is.na(dat$control())) & all(!is.na(dat$experimental())),
+                        "Data must not contain missing values."
+                    ))
+                    validate(need(
+                        all(!is.infinite(dat$control())) & all(!is.infinite(dat$experimental())),
+                        "Data must only contain finite values."
+                    ))
+                    validate(need(
                         input$interval_low <= input$interval_high,
                         str_c(
                             "The lower boundary of the equivalence interval ",
@@ -146,6 +154,14 @@ equivRawServer <- function(id) {
                     validate(need(
                         is.numeric(dat$control()) & is.numeric(dat$experimental()),
                         "Data for the dependent variable must be numeric."
+                    ))
+                    validate(need(
+                        all(!is.na(dat$control())) & all(!is.na(dat$experimental())),
+                        "Data must not contain missing values."
+                    ))
+                    validate(need(
+                        all(!is.infinite(dat$control())) & all(!is.infinite(dat$experimental())),
+                        "Data must only contain finite values."
                     ))
                     validate(need(
                         input$interval_low <= input$interval_high,

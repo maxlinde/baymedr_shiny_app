@@ -117,6 +117,14 @@ superRawServer <- function(id) {
                         is.numeric(dat$control()) & is.numeric(dat$experimental()),
                         "Data for the dependent variable must be numeric."
                     ))
+                    validate(need(
+                        all(!is.na(dat$control())) & all(!is.na(dat$experimental())),
+                        "Data must not contain missing values."
+                    ))
+                    validate(need(
+                        all(!is.infinite(dat$control())) & all(!is.infinite(dat$experimental())),
+                        "Data must only contain finite values."
+                    ))
                     results_calculate(
                         id = id,
                         x = dat$control(),
@@ -134,6 +142,14 @@ superRawServer <- function(id) {
                     validate(need(
                         is.numeric(dat$control()) & is.numeric(dat$experimental()),
                         "Data for the dependent variable must be numeric."
+                    ))
+                    validate(need(
+                        all(!is.na(dat$control())) & all(!is.na(dat$experimental())),
+                        "Data must not contain missing values."
+                    ))
+                    validate(need(
+                        all(!is.infinite(dat$control())) & all(!is.infinite(dat$experimental())),
+                        "Data must only contain finite values."
                     ))
                     results_calculate_freq(
                         id = id,
