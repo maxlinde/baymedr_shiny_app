@@ -164,7 +164,7 @@ infer_plot <- function(n_x = n_x,
                 linetype = "posterior"
             ),
             fun = function(x) {
-                posterior_t(delta = x,
+                posterior_t_cpp(delta = x,
                                 t = t,
                                 n_x = n_x,
                                 n_y = n_y,
@@ -379,7 +379,7 @@ infer_plot <- function(n_x = n_x,
                 linetype = "posterior"
             ),
             fun = function(x) {
-                posterior_t(delta = x,
+                posterior_t_cpp(delta = x,
                                 t = t,
                                 n_x = n_x,
                                 n_y = n_y,
