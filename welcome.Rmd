@@ -15,7 +15,7 @@ csl:
 
 # Bayes Factors for Superiority, Non-inferiority, and Equivalence Designs
 
-Welcome! This website allows you to easily calculate Bayes factors for superiority, non-inferiority, and equivalence designs. This website was built using Shiny [@ChangChengAllaire_2020_1.5.0] and implements the baymedr software [@LindeVanravenzwaaij2021_0.1.1], written in R [@Rcoreteam2019], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible to every researcher. A tutorial manuscript on how to use the baymedr R package is provided elsewhere [see @LindeVanravenzwaaij2019preprint].
+Welcome! This website allows you to easily calculate Bayes factors for superiority, non-inferiority, and equivalence designs. This website was built using Shiny [@ChangChengAllaire_2020_1.7.1] and implements the baymedr software [@LindeVanravenzwaaij2021_0.1.1], written in R [@Rcoreteam2021], that was specifically developed to calculate Bayes factors for these three designs. Usage of this Shiny app does not require any programming skills and is, thus, immediately accessible to every researcher. A tutorial manuscript on how to use the baymedr R package is provided elsewhere [see @LindeVanravenzwaaij2019preprint].
 
 # Bayes Factors
 
